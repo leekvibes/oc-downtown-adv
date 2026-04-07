@@ -28,6 +28,14 @@ export const metadata: Metadata = {
       "Book jet ski and pontoon boat adventures in Ocean City, MD. Explore Assateague Bay and see wild horses!",
     type: "website",
     locale: "en_US",
+    images: [
+      {
+        url: "/og-logo.png",
+        width: 1200,
+        height: 630,
+        alt: "OC Downtown Adventures Logo",
+      },
+    ],
   },
 };
 
