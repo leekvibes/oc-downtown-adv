@@ -55,7 +55,7 @@ export function Header() {
         className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-300 ${
           scrolled
             ? "bg-white shadow-md"
-            : "bg-transparent"
+            : "bg-gradient-to-b from-black/50 to-transparent"
         }`}
       >
         {/* Top info bar - desktop only, only visible when scrolled */}
@@ -83,7 +83,7 @@ export function Header() {
                 width={180}
                 height={60}
                 className={`h-10 md:h-16 w-auto transition-all duration-300 ${
-                  scrolled ? "" : "brightness-0 invert drop-shadow-lg"
+                  scrolled ? "" : "drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)]"
                 }`}
                 priority
               />
@@ -95,10 +95,10 @@ export function Header() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`px-2.5 py-2 text-sm font-medium rounded-md transition-colors ${
+                  className={`px-2.5 py-2 text-sm rounded-md transition-colors ${
                     scrolled
-                      ? "text-dark hover:text-blue-brand"
-                      : "text-white/90 hover:text-white"
+                      ? "font-medium text-dark hover:text-blue-brand"
+                      : "font-semibold text-white hover:text-yellow-brand drop-shadow-[0_1px_3px_rgba(0,0,0,0.5)]"
                   }`}
                 >
                   {link.label}
@@ -126,8 +126,8 @@ export function Header() {
             <div className="flex lg:hidden items-center gap-1.5 sm:gap-2 flex-shrink-0">
               <Link
                 href="/partners"
-                className={`px-2 py-1.5 text-[11px] sm:text-xs font-semibold transition-colors ${
-                  scrolled ? "text-dark hover:text-blue-brand" : "text-white/90 hover:text-white"
+                className={`px-2 py-1.5 text-[11px] sm:text-xs font-bold transition-colors ${
+                  scrolled ? "text-dark hover:text-blue-brand" : "text-white hover:text-yellow-brand drop-shadow-[0_1px_3px_rgba(0,0,0,0.5)]"
                 }`}
               >
                 Partners
@@ -140,7 +140,7 @@ export function Header() {
               <label
                 htmlFor="menu-cb"
                 className={`flex items-center justify-center w-10 h-10 active:bg-gray-100/20 rounded-lg flex-shrink-0 cursor-pointer transition-colors ${
-                  scrolled ? "text-dark" : "text-white"
+                  scrolled ? "text-dark" : "text-white drop-shadow-[0_1px_3px_rgba(0,0,0,0.5)]"
                 }`}
                 role="button"
                 aria-label="Open menu"
