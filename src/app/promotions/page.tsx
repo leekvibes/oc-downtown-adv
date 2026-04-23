@@ -107,7 +107,7 @@ export default function PromotionsPage() {
       {/* ── HERO ── */}
       <section className="relative h-[45vh] min-h-[320px] max-h-[500px] flex items-end justify-center overflow-hidden">
         <Image src={IMAGES.group4} alt="Group on the water" fill sizes="100vw" className="object-cover" priority />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/45 to-black/25" />
         <div className="relative z-10 text-center text-white px-4 pb-10 md:pb-14 w-full max-w-4xl mx-auto">
           <span className="inline-block px-4 py-1.5 bg-yellow-brand text-dark text-xs font-bold uppercase tracking-widest rounded-full mb-4">Save Big</span>
           <h1 className="text-4xl md:text-6xl font-extrabold mb-3 drop-shadow-lg tracking-tight">Deals & Promotions</h1>
@@ -320,7 +320,7 @@ export default function PromotionsPage() {
         <div className="relative z-10 text-center text-white px-4">
           <ScrollReveal>
             <h2 className="text-3xl md:text-5xl font-extrabold mb-4 tracking-tight">Don&apos;t Miss Out</h2>
-            <p className="text-white/80 text-lg mb-8 max-w-xl mx-auto">Book your adventure today and take advantage of our current deals.</p>
+            <p className="text-white/90 text-lg mb-8 max-w-xl mx-auto">Book your adventure today and take advantage of our current deals.</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="px-10 py-4 bg-yellow-brand text-dark font-bold text-lg rounded-lg hover:bg-yellow-hover transition-colors shadow-xl">Book Now</a>
               <a href={PHONE_HREF} className="px-10 py-4 border-2 border-white text-white font-bold text-lg rounded-lg hover:bg-white hover:text-blue-brand transition-colors">{PHONE}</a>

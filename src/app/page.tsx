@@ -237,15 +237,15 @@ export default function Home() {
           sizes="100vw"
           className="object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-dark/80 via-blue-dark/50 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-dark/90 via-blue-dark/60 to-black/20" />
         <div className="relative z-10 h-full flex items-center">
           <div className="max-w-7xl mx-auto px-4 w-full">
             <ScrollReveal direction="left">
-              <p className="text-white/60 text-sm uppercase tracking-widest font-bold mb-2">Assateague Bay</p>
+              <p className="text-white/80 text-sm uppercase tracking-widest font-bold mb-2 drop-shadow-md">Assateague Bay</p>
               <p className="text-4xl md:text-6xl font-extrabold text-white tracking-tight drop-shadow-lg">
                 50+ Square Miles
               </p>
-              <p className="text-xl md:text-2xl text-white/80 font-medium mt-1">
+              <p className="text-xl md:text-2xl text-white/90 font-medium mt-1 drop-shadow-md">
                 of open water to explore
               </p>
             </ScrollReveal>
@@ -348,10 +348,10 @@ export default function Home() {
               <ScrollReveal key={exp.title} delay={i * 120}>
                 <div className="group relative h-80 md:h-96 rounded-2xl overflow-hidden shadow-lg">
                   <Image src={exp.image} alt={exp.title} fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover group-hover:scale-105 transition-transform duration-700" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent" />
                   <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
-                    <h3 className="text-2xl md:text-3xl font-extrabold text-white mb-2 tracking-tight">{exp.title}</h3>
-                    <p className="text-white/85 text-sm md:text-base leading-relaxed">{exp.desc}</p>
+                    <h3 className="text-2xl md:text-3xl font-extrabold text-white mb-2 tracking-tight drop-shadow-md">{exp.title}</h3>
+                    <p className="text-white/90 text-sm md:text-base leading-relaxed">{exp.desc}</p>
                   </div>
                 </div>
               </ScrollReveal>
@@ -380,7 +380,7 @@ export default function Home() {
                 <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="group block">
                   <div className="relative h-52 md:h-60 rounded-2xl overflow-hidden shadow-md ring-1 ring-white/10">
                     <Image src={occ.image} alt={occ.title} fill sizes="(max-width: 768px) 50vw, 20vw" className="object-cover group-hover:scale-110 transition-transform duration-700" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent group-hover:from-blue-brand/80 transition-colors duration-500" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent group-hover:from-blue-brand/80 transition-colors duration-500" />
                     <div className="absolute bottom-0 left-0 right-0 p-4 text-center">
                       <div className="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center mx-auto mb-2">
                         <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
@@ -388,7 +388,7 @@ export default function Home() {
                         </svg>
                       </div>
                       <h3 className="text-white font-bold text-sm md:text-base">{occ.title}</h3>
-                      <p className="text-white/70 text-xs mt-1 hidden md:block">{occ.desc}</p>
+                      <p className="text-white/80 text-xs mt-1 hidden md:block">{occ.desc}</p>
                     </div>
                   </div>
                 </a>
@@ -541,7 +541,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 mb-10">
           <ScrollReveal className="text-center">
             <h2 className="text-4xl md:text-5xl font-extrabold text-white tracking-tight">Life on the Water</h2>
-            <p className="text-white/50 text-lg mt-3">Real photos from real adventures</p>
+            <p className="text-white/70 text-lg mt-3">Real photos from real adventures</p>
           </ScrollReveal>
         </div>
 
@@ -657,7 +657,7 @@ export default function Home() {
         <div className="relative z-10 text-center text-white px-4">
           <ScrollReveal>
             <h2 className="text-4xl md:text-6xl font-extrabold mb-5 tracking-tight">Ready for Your Adventure?</h2>
-            <p className="text-xl text-white/80 mb-10 max-w-2xl mx-auto">
+            <p className="text-xl text-white/90 mb-10 max-w-2xl mx-auto">
               Book your jet ski or pontoon boat today and experience the best of Ocean City from the water.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">

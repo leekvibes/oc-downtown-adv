@@ -75,7 +75,7 @@ export default function PontoonPage() {
         <video autoPlay muted loop playsInline poster={HERO_FALLBACK_IMAGE} className="absolute inset-0 w-full h-full object-cover">
           <source src={HERO_VIDEO_URL} type="video/mp4" />
         </video>
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/20" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/45 to-black/25" />
         <div className="relative z-10 text-center text-white px-4 pb-12 md:pb-16 w-full max-w-4xl mx-auto">
           <span className="inline-block px-4 py-1.5 bg-yellow-brand text-dark text-xs font-bold uppercase tracking-widest rounded-full mb-4">Pontoon Boat Rentals</span>
           <h1 className="text-4xl md:text-6xl font-extrabold mb-3 drop-shadow-lg tracking-tight">
@@ -198,10 +198,10 @@ export default function PontoonPage() {
               <ScrollReveal key={s.title} delay={i * 100}>
                 <div className="group relative h-72 rounded-2xl overflow-hidden shadow-lg">
                   <Image src={s.image} alt={s.title} fill sizes="(max-width: 640px) 100vw, 25vw" className="object-cover group-hover:scale-105 transition-transform duration-700" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent" />
                   <div className="absolute bottom-0 left-0 right-0 p-5">
-                    <h3 className="text-lg font-extrabold text-white mb-1">{s.title}</h3>
-                    <p className="text-white/80 text-xs leading-relaxed">{s.desc}</p>
+                    <h3 className="text-lg font-extrabold text-white mb-1 drop-shadow-md">{s.title}</h3>
+                    <p className="text-white/90 text-xs leading-relaxed drop-shadow-sm">{s.desc}</p>
                   </div>
                 </div>
               </ScrollReveal>
@@ -404,7 +404,7 @@ export default function PontoonPage() {
         <div className="relative z-10 text-center text-white px-4">
           <ScrollReveal>
             <h2 className="text-3xl md:text-5xl font-extrabold mb-4 tracking-tight">Ready to Cruise?</h2>
-            <p className="text-white/80 text-lg mb-8 max-w-xl mx-auto">Book your pontoon boat and explore Assateague Bay on your own terms.</p>
+            <p className="text-white/90 text-lg mb-8 max-w-xl mx-auto">Book your pontoon boat and explore Assateague Bay on your own terms.</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="px-10 py-4 bg-yellow-brand text-dark font-bold text-lg rounded-lg hover:bg-yellow-hover transition-colors shadow-xl">Book Now</a>
               <a href={PHONE_HREF} className="px-10 py-4 border-2 border-white text-white font-bold text-lg rounded-lg hover:bg-white hover:text-blue-brand transition-colors">{PHONE}</a>

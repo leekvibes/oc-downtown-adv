@@ -56,7 +56,7 @@ export default function AboutPage() {
         <video autoPlay muted loop playsInline poster={HERO_FALLBACK_IMAGE} className="absolute inset-0 w-full h-full object-cover">
           <source src={HERO_VIDEO_URL} type="video/mp4" />
         </video>
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/20" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/45 to-black/25" />
         <div className="relative z-10 text-center text-white px-4 pb-12 md:pb-16 w-full max-w-4xl mx-auto">
           <span className="inline-block px-4 py-1.5 bg-yellow-brand text-dark text-xs font-bold uppercase tracking-widest rounded-full mb-4">About Us</span>
           <h1 className="text-4xl md:text-6xl font-extrabold mb-3 drop-shadow-lg tracking-tight">
@@ -169,11 +169,11 @@ export default function AboutPage() {
             <ScrollReveal delay={0}>
               <div className="group relative h-80 rounded-2xl overflow-hidden shadow-xl">
                 <Image src={IMAGES.heroJetski} alt="Jet ski adventures" fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover group-hover:scale-105 transition-transform duration-700" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
                   <span className="inline-block px-2.5 py-1 bg-yellow-brand text-dark text-xs font-bold uppercase rounded mb-2">From $129/hr</span>
                   <h3 className="text-2xl font-extrabold text-white mb-1">Jet Ski Rentals</h3>
-                  <p className="text-white/80 text-sm mb-4">1-hour guided rides on brand-new Sea-Doo jet skis. See wild horses and dolphins.</p>
+                  <p className="text-white/90 text-sm mb-4 drop-shadow-sm">1-hour guided rides on brand-new Sea-Doo jet skis. See wild horses and dolphins.</p>
                   <a href="/jet-ski" className="inline-flex items-center gap-2 text-yellow-brand font-bold text-sm hover:gap-3 transition-all">
                     Learn More
                     <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
@@ -186,11 +186,11 @@ export default function AboutPage() {
             <ScrollReveal delay={100}>
               <div className="group relative h-80 rounded-2xl overflow-hidden shadow-xl">
                 <Image src={IMAGES.pontoon1} alt="Pontoon boat cruises" fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover group-hover:scale-105 transition-transform duration-700" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
                   <span className="inline-block px-2.5 py-1 bg-yellow-brand text-dark text-xs font-bold uppercase rounded mb-2">From $329</span>
                   <h3 className="text-2xl font-extrabold text-white mb-1">Pontoon Boat Rentals</h3>
-                  <p className="text-white/80 text-sm mb-4">Self-guided 2–8 hour bay cruises for up to 10 guests. BYOB, fishing, and more.</p>
+                  <p className="text-white/90 text-sm mb-4 drop-shadow-sm">Self-guided 2–8 hour bay cruises for up to 10 guests. BYOB, fishing, and more.</p>
                   <a href="/pontoon" className="inline-flex items-center gap-2 text-yellow-brand font-bold text-sm hover:gap-3 transition-all">
                     Learn More
                     <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
@@ -314,7 +314,7 @@ export default function AboutPage() {
         <div className="relative z-10 text-center text-white px-4">
           <ScrollReveal>
             <h2 className="text-3xl md:text-5xl font-extrabold mb-4 tracking-tight">Come See Us on the Water</h2>
-            <p className="text-white/80 text-lg mb-8 max-w-xl mx-auto">Book your adventure and experience what makes Ocean City special.</p>
+            <p className="text-white/90 text-lg mb-8 max-w-xl mx-auto">Book your adventure and experience what makes Ocean City special.</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="px-10 py-4 bg-yellow-brand text-dark font-bold text-lg rounded-lg hover:bg-yellow-hover transition-colors shadow-xl">Book Your Adventure</a>
               <a href={PHONE_HREF} className="px-10 py-4 border-2 border-white text-white font-bold text-lg rounded-lg hover:bg-white hover:text-blue-brand transition-colors">{PHONE}</a>
