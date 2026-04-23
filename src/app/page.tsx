@@ -79,6 +79,9 @@ const OCCASIONS = [
   { title: "Birthday Party", desc: "Make it a birthday they won't forget", icon: "M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7", image: IMAGES.group4 },
 ];
 
+/* ── Inline SVG wave for section backgrounds ── */
+const WAVE_SVG = `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%231B5FAE' fill-opacity='0.03' d='M0,224L48,213.3C96,203,192,181,288,181.3C384,181,480,203,576,218.7C672,235,768,245,864,234.7C960,224,1056,192,1152,176C1248,160,1344,160,1392,160L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E")`;
+
 export default function Home() {
   return (
     <>
@@ -176,10 +179,9 @@ export default function Home() {
       <WeatherBar />
 
       {/* ═══════════════════════════════════════════════════════
-          ALTERNATING SERVICE SECTIONS (Jet Ski ↔ Pontoon scroll)
+          JET SKI SECTION
       ═══════════════════════════════════════════════════════ */}
       <section id="adventures" className="scroll-mt-16">
-        {/* ── Jet Ski Section ── */}
         <div className="py-20 md:py-28 bg-white overflow-hidden">
           <div className="max-w-7xl mx-auto px-4">
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
@@ -222,48 +224,108 @@ export default function Home() {
             </div>
           </div>
         </div>
+      </section>
 
-        {/* ── Pontoon Section ── */}
-        <div className="py-20 md:py-28 bg-gray-light overflow-hidden">
-          <div className="max-w-7xl mx-auto px-4">
-            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-              <ScrollReveal direction="left">
-                <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
-                  <Image src={IMAGES.pontoon1} alt="Group enjoying pontoon boat cruise" fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+      {/* ═══════════════════════════════════════════════════════
+          FULL-BLEED PHOTO DIVIDER — Cinematic break
+      ═══════════════════════════════════════════════════════ */}
+      <section className="relative h-[35vh] min-h-[250px] max-h-[400px] overflow-hidden">
+        <Image
+          src={IMAGES.scenery5}
+          alt="Assateague Bay panoramic view"
+          fill
+          sizes="100vw"
+          className="object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-dark/80 via-blue-dark/50 to-transparent" />
+        <div className="relative z-10 h-full flex items-center">
+          <div className="max-w-7xl mx-auto px-4 w-full">
+            <ScrollReveal direction="left">
+              <p className="text-white/60 text-sm uppercase tracking-widest font-bold mb-2">Assateague Bay</p>
+              <p className="text-4xl md:text-6xl font-extrabold text-white tracking-tight drop-shadow-lg">
+                50+ Square Miles
+              </p>
+              <p className="text-xl md:text-2xl text-white/80 font-medium mt-1">
+                of open water to explore
+              </p>
+            </ScrollReveal>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════
+          PONTOON SECTION — with subtle blue gradient
+      ═══════════════════════════════════════════════════════ */}
+      <section className="py-20 md:py-28 bg-gradient-to-b from-blue-light/60 via-blue-light/30 to-white overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <ScrollReveal direction="left">
+              <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
+                <Image src={IMAGES.pontoon1} alt="Group enjoying pontoon boat cruise" fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+              </div>
+            </ScrollReveal>
+            <ScrollReveal direction="right">
+              <span className="inline-block px-4 py-1.5 bg-blue-light text-blue-brand text-xs font-bold uppercase tracking-widest rounded-full mb-4">Pontoon Boats</span>
+              <h2 className="text-4xl md:text-5xl font-extrabold text-dark mb-5 leading-tight tracking-tight">
+                Your Bay. Your Rules.
+              </h2>
+              <p className="text-gray-text text-lg leading-relaxed mb-6">
+                Captain your own pontoon boat through Assateague Bay. Explore wild horse beaches, cruise to sandbars, and enjoy a private adventure with up to 10 guests. From 2 to 8 hours — your schedule, your way.
+              </p>
+              <div className="grid grid-cols-2 gap-4 mb-8">
+                {[
+                  { label: "From $329", sub: "Starting Rate" },
+                  { label: "2-8 Hours", sub: "You Choose" },
+                  { label: "Up to 10", sub: "Guests" },
+                  { label: "Self-Guided", sub: "You Captain" },
+                ].map((stat) => (
+                  <div key={stat.label} className="bg-white rounded-xl p-4 text-center shadow-sm">
+                    <p className="text-xl font-extrabold text-blue-brand">{stat.label}</p>
+                    <p className="text-xs text-gray-text font-medium mt-1">{stat.sub}</p>
+                  </div>
+                ))}
+              </div>
+              <div className="flex flex-wrap gap-3">
+                <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="px-8 py-3.5 bg-yellow-brand text-dark font-bold rounded-lg hover:bg-yellow-hover transition-colors shadow-md">
+                  Book a Pontoon
+                </a>
+                <Link href="/pontoon" className="px-6 py-3.5 border-2 border-blue-brand text-blue-brand font-semibold rounded-lg hover:bg-blue-brand hover:text-white transition-colors">
+                  Learn More
+                </Link>
+              </div>
+            </ScrollReveal>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════
+          BY THE NUMBERS — Stats confidence banner
+      ═══════════════════════════════════════════════════════ */}
+      <section className="py-14 md:py-16 bg-gradient-to-r from-yellow-brand via-yellow-hover to-yellow-brand relative overflow-hidden">
+        {/* Decorative shapes */}
+        <div className="absolute -top-12 -left-12 w-48 h-48 bg-white/10 rounded-full" />
+        <div className="absolute -bottom-8 -right-8 w-36 h-36 bg-white/10 rounded-full" />
+        <div className="max-w-6xl mx-auto px-4 relative z-10">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4">
+            {[
+              { number: "500+", label: "Happy Guests", icon: "M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" },
+              { number: "5.0", label: "Google Rating", icon: "M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" },
+              { number: "50+", label: "Sq Miles of Water", icon: "M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" },
+              { number: "100%", label: "Brand New Fleet", icon: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" },
+            ].map((stat) => (
+              <ScrollReveal key={stat.label}>
+                <div className="text-center">
+                  <div className="w-12 h-12 bg-dark/10 rounded-full flex items-center justify-center mx-auto mb-3">
+                    <svg className="w-6 h-6 text-dark" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d={stat.icon} />
+                    </svg>
+                  </div>
+                  <p className="text-4xl md:text-5xl font-extrabold text-dark tracking-tight">{stat.number}</p>
+                  <p className="text-dark/70 font-bold text-sm mt-1 uppercase tracking-wide">{stat.label}</p>
                 </div>
               </ScrollReveal>
-              <ScrollReveal direction="right">
-                <span className="inline-block px-4 py-1.5 bg-blue-light text-blue-brand text-xs font-bold uppercase tracking-widest rounded-full mb-4">Pontoon Boats</span>
-                <h2 className="text-4xl md:text-5xl font-extrabold text-dark mb-5 leading-tight tracking-tight">
-                  Your Bay. Your Rules.
-                </h2>
-                <p className="text-gray-text text-lg leading-relaxed mb-6">
-                  Captain your own pontoon boat through Assateague Bay. Explore wild horse beaches, cruise to sandbars, and enjoy a private adventure with up to 10 guests. From 2 to 8 hours — your schedule, your way.
-                </p>
-                <div className="grid grid-cols-2 gap-4 mb-8">
-                  {[
-                    { label: "From $329", sub: "Starting Rate" },
-                    { label: "2-8 Hours", sub: "You Choose" },
-                    { label: "Up to 10", sub: "Guests" },
-                    { label: "Self-Guided", sub: "You Captain" },
-                  ].map((stat) => (
-                    <div key={stat.label} className="bg-white rounded-xl p-4 text-center shadow-sm">
-                      <p className="text-xl font-extrabold text-blue-brand">{stat.label}</p>
-                      <p className="text-xs text-gray-text font-medium mt-1">{stat.sub}</p>
-                    </div>
-                  ))}
-                </div>
-                <div className="flex flex-wrap gap-3">
-                  <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="px-8 py-3.5 bg-yellow-brand text-dark font-bold rounded-lg hover:bg-yellow-hover transition-colors shadow-md">
-                    Book a Pontoon
-                  </a>
-                  <Link href="/pontoon" className="px-6 py-3.5 border-2 border-blue-brand text-blue-brand font-semibold rounded-lg hover:bg-blue-brand hover:text-white transition-colors">
-                    Learn More
-                  </Link>
-                </div>
-              </ScrollReveal>
-            </div>
+            ))}
           </div>
         </div>
       </section>
@@ -299,13 +361,15 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════════════════════════════════════════
-          CHOOSE YOUR OCCASION
+          CHOOSE YOUR OCCASION — Dark immersive section
       ═══════════════════════════════════════════════════════ */}
-      <section className="py-20 md:py-24 bg-gray-light">
-        <div className="max-w-7xl mx-auto px-4">
+      <section className="py-20 md:py-24 bg-dark relative overflow-hidden">
+        {/* Subtle grid pattern overlay */}
+        <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(circle, #ffffff 1px, transparent 1px)', backgroundSize: '24px 24px' }} />
+        <div className="max-w-7xl mx-auto px-4 relative z-10">
           <ScrollReveal className="text-center mb-14">
-            <h2 className="text-4xl md:text-5xl font-extrabold text-dark tracking-tight">Plan Your Perfect Day</h2>
-            <p className="text-gray-text text-lg mt-3 max-w-2xl mx-auto">
+            <h2 className="text-4xl md:text-5xl font-extrabold text-white tracking-tight">Plan Your Perfect Day</h2>
+            <p className="text-white/60 text-lg mt-3 max-w-2xl mx-auto">
               Whatever the occasion, we&apos;ll make it unforgettable on the water.
             </p>
           </ScrollReveal>
@@ -314,7 +378,7 @@ export default function Home() {
             {OCCASIONS.map((occ, i) => (
               <ScrollReveal key={occ.title} delay={i * 80}>
                 <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="group block">
-                  <div className="relative h-52 md:h-60 rounded-2xl overflow-hidden shadow-md">
+                  <div className="relative h-52 md:h-60 rounded-2xl overflow-hidden shadow-md ring-1 ring-white/10">
                     <Image src={occ.image} alt={occ.title} fill sizes="(max-width: 768px) 50vw, 20vw" className="object-cover group-hover:scale-110 transition-transform duration-700" />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent group-hover:from-blue-brand/80 transition-colors duration-500" />
                     <div className="absolute bottom-0 left-0 right-0 p-4 text-center">
@@ -335,22 +399,24 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════════════════════════════════════════
-          WHY CHOOSE US — Comparison Table
+          WHY CHOOSE US — Dark premium section
       ═══════════════════════════════════════════════════════ */}
-      <section className="py-20 md:py-24 bg-white">
-        <div className="max-w-5xl mx-auto px-4">
+      <section className="py-20 md:py-24 bg-blue-dark relative overflow-hidden">
+        {/* Subtle radial glow */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-blue-brand/20 rounded-full blur-[120px]" />
+        <div className="max-w-5xl mx-auto px-4 relative z-10">
           <ScrollReveal className="text-center mb-14">
-            <h2 className="text-4xl md:text-5xl font-extrabold text-dark tracking-tight">Why Choose Us</h2>
-            <p className="text-gray-text text-lg mt-3">See how we compare to other rental companies in Ocean City.</p>
+            <h2 className="text-4xl md:text-5xl font-extrabold text-white tracking-tight">Why Choose Us</h2>
+            <p className="text-blue-200/70 text-lg mt-3">See how we compare to other rental companies in Ocean City.</p>
           </ScrollReveal>
 
           <ScrollReveal delay={150}>
-            <div className="bg-gray-light rounded-2xl overflow-hidden shadow-lg border border-gray-border">
+            <div className="bg-white/5 backdrop-blur-sm rounded-2xl overflow-hidden shadow-2xl border border-white/10">
               <div className="grid grid-cols-3 gap-0">
                 {/* Header */}
-                <div className="p-4 md:p-5 bg-gray-light font-bold text-gray-text text-sm border-b border-gray-border">Feature</div>
-                <div className="p-4 md:p-5 bg-blue-brand text-white font-bold text-sm text-center border-b border-blue-dark">OC Downtown Adventures</div>
-                <div className="p-4 md:p-5 bg-gray-light font-bold text-gray-text text-sm text-center border-b border-gray-border">Other Rentals</div>
+                <div className="p-4 md:p-5 bg-white/5 font-bold text-white/60 text-sm border-b border-white/10">Feature</div>
+                <div className="p-4 md:p-5 bg-blue-brand text-white font-bold text-sm text-center border-b border-blue-brand">OC Downtown Adventures</div>
+                <div className="p-4 md:p-5 bg-white/5 font-bold text-white/60 text-sm text-center border-b border-white/10">Other Rentals</div>
 
                 {[
                   { feature: "Downtown Location", us: true, them: false },
@@ -363,14 +429,14 @@ export default function Home() {
                   { feature: "Partner Restaurant Deals", us: true, them: false },
                 ].map((row, i) => (
                   <div key={row.feature} className="contents">
-                    <div className={`p-4 md:p-5 text-sm font-medium text-dark ${i % 2 === 0 ? "bg-white" : "bg-gray-light"} border-b border-gray-border`}>
+                    <div className={`p-4 md:p-5 text-sm font-medium text-white/80 ${i % 2 === 0 ? "bg-white/[0.03]" : "bg-transparent"} border-b border-white/5`}>
                       {row.feature}
                     </div>
-                    <div className={`p-4 md:p-5 text-center ${i % 2 === 0 ? "bg-blue-light/40" : "bg-blue-light/20"} border-b border-gray-border`}>
-                      <span className="text-lg font-bold text-green-600">{row.us ? "\u2713" : "\u2717"}</span>
+                    <div className={`p-4 md:p-5 text-center ${i % 2 === 0 ? "bg-blue-brand/20" : "bg-blue-brand/10"} border-b border-white/5`}>
+                      <span className="text-lg font-bold text-green-400">{row.us ? "\u2713" : "\u2717"}</span>
                     </div>
-                    <div className={`p-4 md:p-5 text-center ${i % 2 === 0 ? "bg-white" : "bg-gray-light"} border-b border-gray-border`}>
-                      <span className={`text-lg font-bold ${row.them ? "text-green-600" : "text-red-400"}`}>{row.them ? "\u2713" : "\u2717"}</span>
+                    <div className={`p-4 md:p-5 text-center ${i % 2 === 0 ? "bg-white/[0.03]" : "bg-transparent"} border-b border-white/5`}>
+                      <span className={`text-lg font-bold ${row.them ? "text-green-400" : "text-red-400/60"}`}>{row.them ? "\u2713" : "\u2717"}</span>
                     </div>
                   </div>
                 ))}
@@ -381,9 +447,12 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════════════════════════════════════════
-          HOW IT WORKS
+          HOW IT WORKS — with wave pattern background
       ═══════════════════════════════════════════════════════ */}
-      <section className="py-20 md:py-24 bg-gray-light">
+      <section
+        className="py-20 md:py-24 bg-gray-light relative"
+        style={{ backgroundImage: WAVE_SVG, backgroundPosition: 'bottom', backgroundRepeat: 'no-repeat', backgroundSize: '100% 300px' }}
+      >
         <div className="max-w-5xl mx-auto px-4">
           <ScrollReveal className="text-center mb-14">
             <h2 className="text-4xl md:text-5xl font-extrabold text-dark tracking-tight">How It Works</h2>
@@ -413,9 +482,9 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════════════════════════════════════════
-          ADD-ON: OC YACHT SHOTS
+          ADD-ON: OC YACHT SHOTS — blue-light gradient tint
       ═══════════════════════════════════════════════════════ */}
-      <section className="py-20 md:py-24 bg-white overflow-hidden">
+      <section className="py-20 md:py-24 bg-gradient-to-br from-blue-light via-white to-blue-light/40 overflow-hidden">
         <div className="max-w-6xl mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <ScrollReveal direction="left">
@@ -466,13 +535,13 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════════════════════════════════════════
-          AUTO-SCROLLING GALLERY
+          AUTO-SCROLLING GALLERY — Dark container
       ═══════════════════════════════════════════════════════ */}
-      <section className="py-16 md:py-20 bg-white overflow-hidden">
+      <section className="py-16 md:py-20 bg-dark overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 mb-10">
           <ScrollReveal className="text-center">
-            <h2 className="text-4xl md:text-5xl font-extrabold text-dark tracking-tight">Life on the Water</h2>
-            <p className="text-gray-text text-lg mt-3">Real photos from real adventures</p>
+            <h2 className="text-4xl md:text-5xl font-extrabold text-white tracking-tight">Life on the Water</h2>
+            <p className="text-white/50 text-lg mt-3">Real photos from real adventures</p>
           </ScrollReveal>
         </div>
 
@@ -483,7 +552,7 @@ export default function Home() {
         </div>
 
         <div className="text-center mt-10">
-          <Link href="/gallery" className="inline-flex items-center gap-2 px-6 py-3 border-2 border-blue-brand text-blue-brand font-semibold rounded-lg hover:bg-blue-brand hover:text-white transition-colors">
+          <Link href="/gallery" className="inline-flex items-center gap-2 px-6 py-3 border-2 border-white/30 text-white font-semibold rounded-lg hover:bg-white hover:text-dark transition-colors">
             View Full Gallery
             <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
