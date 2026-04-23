@@ -22,9 +22,9 @@ export function Footer() {
             <Image
               src={LOGO_URL}
               alt="OC Downtown Adventures"
-              width={180}
-              height={60}
-              className="h-14 w-auto mb-4 brightness-0 invert"
+              width={220}
+              height={80}
+              className="h-20 w-auto mb-4"
             />
             <p className="text-sm text-blue-200 leading-relaxed">
               Jet ski and pontoon boat adventures in the heart of downtown Ocean City, Maryland.
