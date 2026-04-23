@@ -66,7 +66,7 @@ const EXPERIENCES = [
   {
     title: "Assateague Island",
     desc: "A 37-mile stretch of untouched national seashore. Beach your pontoon, explore the sands, and experience true coastal wilderness.",
-    image: IMAGES.scenery1,
+    image: IMAGES.jetski1,
   },
 ];
 
@@ -215,7 +215,7 @@ export default function Home() {
               </ScrollReveal>
               <ScrollReveal direction="right" className="order-1 lg:order-2">
                 <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
-                  <Image src={IMAGES.jetski1} alt="Jet ski riders on Assateague Bay" fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover" />
+                  <Image src={IMAGES.scenery1} alt="Jet ski rider on Assateague Bay" fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
                 </div>
               </ScrollReveal>
