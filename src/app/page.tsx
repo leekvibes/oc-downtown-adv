@@ -15,6 +15,7 @@ import {
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { AutoScrollGallery } from "@/components/AutoScrollGallery";
 import { EmailSignup } from "@/components/EmailSignup";
+import { OceanBanner } from "@/components/OceanBanner";
 
 /* ── All gallery images for the auto-scroll strips ── */
 const GALLERY_ROW_1 = [
@@ -170,27 +171,9 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════════════════════════════════════════
-          TRUST BAR
+          ANIMATED OCEAN BANNER
       ═══════════════════════════════════════════════════════ */}
-      <section className="bg-blue-brand text-white py-4">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center text-sm font-semibold">
-            {[
-              { icon: "M13 10V3L4 14h7v7l9-11h-7z", text: "Brand New Jet Skis" },
-              { icon: "M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z", text: "Fun for All Ages" },
-              { icon: "M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z", text: "Right Downtown" },
-              { icon: "M5 13l4 4L19 7", text: "Free Parking" },
-            ].map((item) => (
-              <div key={item.text} className="flex items-center justify-center gap-2">
-                <svg className="w-5 h-5 text-yellow-brand flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={item.icon} />
-                </svg>
-                <span>{item.text}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <OceanBanner />
 
       {/* ═══════════════════════════════════════════════════════
           ALTERNATING SERVICE SECTIONS (Jet Ski ↔ Pontoon scroll)
