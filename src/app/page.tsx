@@ -129,7 +129,7 @@ export default function Home() {
           </a>
 
           <p className="text-sm md:text-base text-white/80 mb-4 max-w-xl mx-auto">
-            Wild horses. Dolphins. Stunning sunsets. Experience Assateague Bay like never before.
+            Ocean City&apos;s largest riding area. Brand new equipment. Adventures you won&apos;t find anywhere else.
           </p>
 
           {/* Google Reviews Badge */}
