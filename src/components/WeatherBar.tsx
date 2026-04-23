@@ -6,6 +6,7 @@ interface WeatherData {
   temp: number;
   feelsLike: number;
   wind: number;
+  waterTemp: number | null;
   description: string;
   icon: "sun" | "partly" | "cloudy" | "rain" | "storm";
 }
@@ -13,6 +14,9 @@ interface WeatherData {
 /* Ocean City MD coordinates */
 const LAT = 38.3365;
 const LON = -75.0849;
+
+/* NOAA Ocean City Inlet station — closest to the bay */
+const NOAA_STATION = "8570283";
 
 function weatherIcon(code: number): WeatherData["icon"] {
   if (code <= 1) return "sun";
@@ -70,21 +74,40 @@ const RainIcon = () => (
 
 const IconMap = { sun: SunIcon, partly: PartlyIcon, cloudy: CloudyIcon, rain: RainIcon, storm: RainIcon };
 
+async function fetchWaterTemp(): Promise<number | null> {
+  try {
+    const res = await fetch(
+      `https://api.tidesandcurrents.noaa.gov/api/prod/datagetter?date=latest&station=${NOAA_STATION}&product=water_temperature&units=english&time_zone=lst_ldt&format=json`
+    );
+    const data = await res.json();
+    if (data?.data?.[0]?.v) {
+      return Math.round(parseFloat(data.data[0].v));
+    }
+    return null;
+  } catch {
+    return null;
+  }
+}
+
 export function WeatherBar() {
   const [weather, setWeather] = useState<WeatherData | null>(null);
 
   useEffect(() => {
     async function fetchWeather() {
       try {
-        const res = await fetch(
-          `https://api.open-meteo.com/v1/forecast?latitude=${LAT}&longitude=${LON}&current=temperature_2m,apparent_temperature,wind_speed_10m,weather_code&temperature_unit=fahrenheit&wind_speed_unit=mph&timezone=America%2FNew_York`
-        );
-        const data = await res.json();
+        const [weatherRes, waterTemp] = await Promise.all([
+          fetch(
+            `https://api.open-meteo.com/v1/forecast?latitude=${LAT}&longitude=${LON}&current=temperature_2m,apparent_temperature,wind_speed_10m,weather_code&temperature_unit=fahrenheit&wind_speed_unit=mph&timezone=America%2FNew_York`
+          ),
+          fetchWaterTemp(),
+        ]);
+        const data = await weatherRes.json();
         const c = data.current;
         setWeather({
           temp: Math.round(c.temperature_2m),
           feelsLike: Math.round(c.apparent_temperature),
           wind: Math.round(c.wind_speed_10m),
+          waterTemp,
           description: weatherLabel(c.weather_code),
           icon: weatherIcon(c.weather_code),
         });
@@ -110,7 +133,7 @@ export function WeatherBar() {
             <span className="font-semibold">Ocean City, MD</span>
           </div>
 
-          {/* Temp */}
+          {/* Air Temp */}
           <div className="flex items-center gap-1.5">
             <span className="text-2xl font-extrabold">{weather.temp}°F</span>
             <span className="text-white/60 text-xs">Feels {weather.feelsLike}°</span>
@@ -118,6 +141,16 @@ export function WeatherBar() {
 
           {/* Conditions */}
           <div className="text-white/80">{weather.description}</div>
+
+          {/* Water Temp */}
+          {weather.waterTemp !== null && (
+            <div className="flex items-center gap-1.5 text-white/80">
+              <svg className="w-4 h-4 text-blue-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
+              </svg>
+              Water: {weather.waterTemp}°F
+            </div>
+          )}
 
           {/* Wind */}
           <div className="flex items-center gap-1.5 text-white/80">
