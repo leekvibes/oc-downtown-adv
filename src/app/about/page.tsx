@@ -5,10 +5,27 @@ import { ScrollReveal } from "@/components/ScrollReveal";
 import { ContactForm } from "@/components/ContactForm";
 
 export const metadata: Metadata = {
-  title: "About OC Downtown Adventures | Family-Owned Ocean City MD Water Sports",
+  title: "About Us | Family-Owned Jet Ski & Boat Rental | Ocean City MD",
   description:
-    "Family-owned jet ski and pontoon boat rental in downtown Ocean City, MD. Brand new 2026 fleet, 5-star Google rated, free parking. Learn our story and come ride with us.",
-  keywords: ["ocean city md water sports", "jet ski rental about", "family owned ocean city", "OC Downtown Adventures"],
+    "Meet the family behind OC Downtown Adventures — Ocean City MD's top-rated jet ski and pontoon boat rental. Brand-new 2026 fleet, 5-star Google reviews, free downtown parking. Learn our story.",
+  keywords: [
+    "ocean city md water sports",
+    "jet ski rental ocean city md",
+    "pontoon boat rental ocean city maryland",
+    "family owned boat rental ocean city",
+    "OC Downtown Adventures",
+    "water sports ocean city md",
+    "boat rental downtown ocean city",
+  ],
+  alternates: {
+    canonical: "https://ocdowntownadventures.com/about",
+  },
+  openGraph: {
+    title: "About Us | Family-Owned Jet Ski & Boat Rental | Ocean City MD",
+    description:
+      "Meet the family behind OC Downtown Adventures — Ocean City's top-rated jet ski and pontoon boat rental.",
+    url: "https://ocdowntownadventures.com/about",
+  },
 };
 
 const STATS = [
@@ -42,10 +59,10 @@ const VALUES = [
 ];
 
 const TEAM_PHOTOS = [
-  { src: IMAGES.group1, alt: "Team on the dock" },
-  { src: IMAGES.group2, alt: "Guides with guests" },
-  { src: IMAGES.group3, alt: "Preparing jet skis" },
-  { src: IMAGES.group4, alt: "Happy customers" },
+  { src: IMAGES.group1, alt: "OC Downtown Adventures team at the dock in Ocean City MD" },
+  { src: IMAGES.group2, alt: "Jet ski guides with guests on Assateague Bay" },
+  { src: IMAGES.group3, alt: "Preparing brand-new jet skis for rental in Ocean City" },
+  { src: IMAGES.group4, alt: "Happy customers after pontoon boat rental Ocean City Maryland" },
 ];
 
 export default function AboutPage() {
@@ -168,7 +185,7 @@ export default function AboutPage() {
             {/* Jet Ski card */}
             <ScrollReveal delay={0}>
               <div className="group relative h-80 rounded-2xl overflow-hidden shadow-xl">
-                <Image src={IMAGES.heroJetski} alt="Jet ski adventures" fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover group-hover:scale-105 transition-transform duration-700" />
+                <Image src={IMAGES.heroJetski} alt="Jet ski rental guided tour on Assateague Bay Ocean City MD" fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover group-hover:scale-105 transition-transform duration-700" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
                   <span className="inline-block px-2.5 py-1 bg-yellow-brand text-dark text-xs font-bold uppercase rounded mb-2">From $129/hr</span>
@@ -185,7 +202,7 @@ export default function AboutPage() {
             {/* Pontoon card */}
             <ScrollReveal delay={100}>
               <div className="group relative h-80 rounded-2xl overflow-hidden shadow-xl">
-                <Image src={IMAGES.pontoon1} alt="Pontoon boat cruises" fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover group-hover:scale-105 transition-transform duration-700" />
+                <Image src={IMAGES.pontoon1} alt="Pontoon boat rental cruise on Assateague Bay Ocean City Maryland" fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover group-hover:scale-105 transition-transform duration-700" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
                   <span className="inline-block px-2.5 py-1 bg-yellow-brand text-dark text-xs font-bold uppercase rounded mb-2">From $329</span>
@@ -309,7 +326,7 @@ export default function AboutPage() {
 
       {/* ── BOTTOM CTA ── */}
       <section className="relative py-20 overflow-hidden">
-        <Image src={IMAGES.scenery5} alt="Ocean City waterfront" fill sizes="100vw" className="object-cover" />
+        <Image src={IMAGES.scenery5} alt="Ocean City MD waterfront at downtown dock" fill sizes="100vw" className="object-cover" />
         <div className="absolute inset-0 bg-blue-dark/85" />
         <div className="relative z-10 text-center text-white px-4">
           <ScrollReveal>

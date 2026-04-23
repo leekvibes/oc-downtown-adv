@@ -3,12 +3,33 @@ import Link from "next/link";
 import { Metadata } from "next";
 import { BOOKING_URL, IMAGES, PHONE, PHONE_HREF, REVIEWS, HERO_VIDEO_URL, HERO_FALLBACK_IMAGE } from "@/lib/constants";
 import { ScrollReveal } from "@/components/ScrollReveal";
+import { faqSchema, serviceSchema, breadcrumbSchema } from "@/components/StructuredData";
 
 export const metadata: Metadata = {
-  title: "Jet Ski Rentals in Ocean City MD | Guided Tours | OC Downtown Adventures",
+  title: "Jet Ski Rental Ocean City MD | Guided Tours from $129/hr | Book Online",
   description:
-    "Book a 1-hour guided jet ski tour in Assateague Bay, Ocean City MD. Brand new Sea-Doo jet skis, see wild horses & dolphins, ages 5+. From $129/hr. Free parking downtown.",
-  keywords: ["jet ski rental ocean city md", "jet ski tour assateague bay", "ocean city jet ski", "guided jet ski ride"],
+    "Book a 1-hour guided jet ski tour on Assateague Bay in Ocean City, Maryland. Brand-new Sea-Doo jet skis, see wild horses & dolphins, ages 5+. From $129/hr. Certified guides, life vests included, free parking downtown. Book online today!",
+  keywords: [
+    "jet ski rental ocean city md",
+    "jet ski tour assateague bay",
+    "ocean city jet ski",
+    "guided jet ski ride ocean city",
+    "jet ski near me ocean city",
+    "waverunner rental ocean city md",
+    "ocean city maryland jet ski tour",
+    "jet ski rental near me",
+    "water sports ocean city md",
+    "jet ski ocean city bay",
+  ],
+  alternates: {
+    canonical: "https://ocdowntownadventures.com/jet-ski",
+  },
+  openGraph: {
+    title: "Jet Ski Rental in Ocean City, MD | Guided Tours from $129/hr",
+    description: "1-hour guided jet ski tours on Assateague Bay. Brand-new Sea-Doo jet skis, wild horses, dolphins. Book online!",
+    url: "https://ocdowntownadventures.com/jet-ski",
+    type: "website",
+  },
 };
 
 const HIGHLIGHTS = [
@@ -53,6 +74,35 @@ const photos = [
 export default function JetSkiPage() {
   return (
     <>
+      {/* Schema.org structured data for SEO */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(serviceSchema({
+            name: "Jet Ski Rental Ocean City MD",
+            description: "1-hour guided jet ski tour on Assateague Bay in Ocean City, Maryland. Brand-new Sea-Doo jet skis with certified guide. See wild horses and dolphins. Up to 3 riders per ski, ages 5+. Life vests included, free parking.",
+            url: "https://ocdowntownadventures.com/jet-ski",
+            price: "129",
+            image: IMAGES.heroJetski,
+          })),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(faqSchema(faqs)),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbSchema([
+            { name: "Home", url: "https://ocdowntownadventures.com" },
+            { name: "Jet Ski Rentals", url: "https://ocdowntownadventures.com/jet-ski" },
+          ])),
+        }}
+      />
+
       {/* ── VIDEO HERO ── */}
       <section className="relative h-[70vh] min-h-[480px] max-h-[700px] flex items-end justify-center overflow-hidden">
         <video autoPlay muted loop playsInline poster={HERO_FALLBACK_IMAGE} className="absolute inset-0 w-full h-full object-cover">
@@ -122,7 +172,7 @@ export default function JetSkiPage() {
             </ScrollReveal>
             <ScrollReveal direction="right">
               <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
-                <Image src={IMAGES.heroJetski} alt="Jet ski riders on Assateague Bay" fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover" />
+                <Image src={IMAGES.heroJetski} alt="Guided jet ski tour on Assateague Bay in Ocean City Maryland" fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover" />
               </div>
             </ScrollReveal>
           </div>
@@ -299,7 +349,7 @@ export default function JetSkiPage() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
             {photos.map((src, i) => (
               <div key={i} className="relative aspect-[4/3] rounded-xl overflow-hidden shadow-md group">
-                <Image src={src} alt={`Jet ski adventure ${i + 1}`} fill sizes="(max-width: 768px) 50vw, 25vw" className="object-cover group-hover:scale-105 transition-transform duration-500" />
+                <Image src={src} alt={`Jet ski rental adventure on Assateague Bay Ocean City MD ${i + 1}`} fill sizes="(max-width: 768px) 50vw, 25vw" className="object-cover group-hover:scale-105 transition-transform duration-500" />
               </div>
             ))}
           </div>
@@ -312,9 +362,21 @@ export default function JetSkiPage() {
         </div>
       </section>
 
+      {/* ── ALSO EXPLORE ── */}
+      <section className="py-12 bg-white border-t border-gray-border">
+        <div className="max-w-4xl mx-auto px-4 text-center">
+          <p className="text-gray-text text-sm">
+            Want a more relaxed experience? Check out our <Link href="/pontoon" className="text-blue-brand font-semibold hover:underline">self-guided pontoon boat rentals</Link> for up to 10 guests.
+            View our <Link href="/promotions" className="text-blue-brand font-semibold hover:underline">current deals — buy 3, get 4th free</Link>,
+            or browse our <Link href="/gallery" className="text-blue-brand font-semibold hover:underline">adventure photo gallery</Link>.
+            Have questions? Visit our <Link href="/faq" className="text-blue-brand font-semibold hover:underline">FAQ page</Link> or <Link href="/contact" className="text-blue-brand font-semibold hover:underline">contact us</Link>.
+          </p>
+        </div>
+      </section>
+
       {/* ── BOTTOM CTA ── */}
       <section className="relative py-20 overflow-hidden">
-        <Image src={IMAGES.scenery2} alt="Sunset on the bay" fill sizes="100vw" className="object-cover" />
+        <Image src={IMAGES.scenery2} alt="Sunset over Assateague Bay Ocean City Maryland" fill sizes="100vw" className="object-cover" />
         <div className="absolute inset-0 bg-blue-dark/85" />
         <div className="relative z-10 text-center text-white px-4">
           <ScrollReveal>

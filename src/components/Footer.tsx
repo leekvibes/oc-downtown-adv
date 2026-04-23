@@ -40,11 +40,13 @@ export function Footer() {
             <ul className="space-y-2">
               {[
                 { href: "/jet-ski", label: "Jet Ski Rentals" },
-                { href: "/pontoon", label: "Pontoon Boats" },
-                { href: "/gallery", label: "Gallery" },
-                { href: "/promotions", label: "Promotions" },
-                { href: "/faq", label: "FAQ" },
+                { href: "/pontoon", label: "Pontoon Boat Rentals" },
+                { href: "/promotions", label: "Deals & Promotions" },
+                { href: "/gallery", label: "Photo Gallery" },
+                { href: "/faq", label: "FAQ & Policies" },
                 { href: "/about", label: "About Us" },
+                { href: "/contact", label: "Contact Us" },
+                { href: "/find-us", label: "Find Our Location" },
               ].map((link) => (
                 <li key={link.href}>
                   <Link

@@ -16,57 +16,62 @@ import { ScrollReveal } from "@/components/ScrollReveal";
 import { AutoScrollGallery } from "@/components/AutoScrollGallery";
 import { EmailSignup } from "@/components/EmailSignup";
 import { WeatherBar } from "@/components/WeatherBar";
+import { InteractiveMap } from "@/components/InteractiveMap";
 
 /* ── All gallery images for the auto-scroll strips ── */
 const GALLERY_ROW_1 = [
-  { src: IMAGES.jetski1, alt: "Jet ski riders on the bay" },
-  { src: IMAGES.pontoon1, alt: "Pontoon boat cruise" },
-  { src: IMAGES.scenery2, alt: "Golden sunset over the bay" },
-  { src: IMAGES.jetski4, alt: "Jet ski adventure" },
-  { src: IMAGES.group1, alt: "Group having fun on the water" },
-  { src: IMAGES.pontoon3, alt: "Pontoon near Assateague" },
-  { src: IMAGES.scenery1, alt: "Scenic bay views" },
-  { src: IMAGES.jetski6, alt: "Riding through the waves" },
-  { src: IMAGES.group3, alt: "Friends on a boat" },
-  { src: IMAGES.pontoon5, alt: "Pontoon boat adventure" },
-  { src: IMAGES.scenery4, alt: "Wild horses on Assateague" },
+  { src: IMAGES.jetski1, alt: "Jet ski rental riders on Assateague Bay Ocean City MD" },
+  { src: IMAGES.pontoon1, alt: "Pontoon boat rental cruise on the bay Ocean City Maryland" },
+  { src: IMAGES.scenery2, alt: "Golden sunset over Assateague Bay boat rental area" },
+  { src: IMAGES.jetski4, alt: "Guided jet ski adventure near Assateague Island" },
+  { src: IMAGES.group1, alt: "Group jet ski tour with OC Downtown Adventures" },
+  { src: IMAGES.pontoon3, alt: "Pontoon boat near Assateague Island wild horses" },
+  { src: IMAGES.scenery1, alt: "Scenic bay views from jet ski tour Ocean City" },
+  { src: IMAGES.jetski6, alt: "Riding jet ski through waves on Assateague Bay" },
+  { src: IMAGES.group3, alt: "Friends enjoying boat rental in Ocean City MD" },
+  { src: IMAGES.pontoon5, alt: "Pontoon boat adventure on Assateague Bay" },
+  { src: IMAGES.scenery4, alt: "Wild horses on Assateague Island from pontoon boat" },
 ];
 
 const GALLERY_ROW_2 = [
-  { src: IMAGES.jetski2, alt: "Jet ski on open water" },
-  { src: IMAGES.pontoon2, alt: "Group on pontoon boat" },
-  { src: IMAGES.scenery3, alt: "Ocean City bay" },
-  { src: IMAGES.jetski7, alt: "Jet ski rider" },
-  { src: IMAGES.group2, alt: "Family adventure" },
-  { src: IMAGES.pontoon4, alt: "Pontoon at sunset" },
-  { src: IMAGES.jetski3, alt: "Jet ski tour" },
-  { src: IMAGES.scenery5, alt: "Bay wildlife" },
-  { src: IMAGES.group4, alt: "Group fun on the water" },
-  { src: IMAGES.jetski8, alt: "Jet ski excitement" },
-  { src: IMAGES.pontoon6, alt: "Pontoon boat group" },
+  { src: IMAGES.jetski2, alt: "Jet ski rental on open water Ocean City Maryland" },
+  { src: IMAGES.pontoon2, alt: "Group pontoon boat cruise Ocean City MD" },
+  { src: IMAGES.scenery3, alt: "Dolphins in Ocean City bay near boat rentals" },
+  { src: IMAGES.jetski7, alt: "Jet ski guided tour rider Ocean City" },
+  { src: IMAGES.group2, alt: "Family boat rental adventure Ocean City MD" },
+  { src: IMAGES.pontoon4, alt: "Pontoon boat at sunset Ocean City Maryland" },
+  { src: IMAGES.jetski3, alt: "Jet ski tour on Assateague Bay" },
+  { src: IMAGES.scenery5, alt: "Assateague Bay wildlife viewing from boat" },
+  { src: IMAGES.group4, alt: "Group water sports fun Ocean City MD" },
+  { src: IMAGES.jetski8, alt: "Thrilling jet ski experience Ocean City" },
+  { src: IMAGES.pontoon6, alt: "Pontoon boat group outing Ocean City Maryland" },
 ];
 
 /* ── Experience / "What You'll See" data ── */
 const EXPERIENCES = [
   {
     title: "Wild Horses",
-    desc: "Assateague Island is home to herds of wild horses that have roamed freely for centuries. Get up close from the water for a once-in-a-lifetime encounter.",
+    desc: "Assateague Island is home to herds of wild horses that have roamed freely for centuries. Get up close from the water on a jet ski tour or pontoon boat cruise for a once-in-a-lifetime encounter.",
     image: IMAGES.scenery4,
+    alt: "Wild horses on Assateague Island seen from jet ski tour Ocean City MD",
   },
   {
     title: "Dolphins",
-    desc: "Bottlenose dolphins regularly swim through the bay and inlet. Watch them leap and play alongside your boat in their natural habitat.",
+    desc: "Bottlenose dolphins regularly swim through the bay and inlet. Watch them leap and play alongside your boat rental in their natural habitat.",
     image: IMAGES.scenery3,
+    alt: "Dolphins spotted during boat rental on Assateague Bay Ocean City",
   },
   {
     title: "Stunning Sunsets",
-    desc: "The bay offers unobstructed views of Ocean City's legendary sunsets. Book a late ride for golden-hour magic you'll never forget.",
+    desc: "The bay offers unobstructed views of Ocean City's legendary sunsets. Book a late jet ski ride or pontoon cruise for golden-hour magic you'll never forget.",
     image: IMAGES.scenery2,
+    alt: "Stunning sunset from pontoon boat cruise on Assateague Bay",
   },
   {
     title: "Assateague Island",
-    desc: "A 37-mile stretch of untouched national seashore. Beach your pontoon, explore the sands, and experience true coastal wilderness.",
+    desc: "A 37-mile stretch of untouched national seashore. Beach your pontoon boat, explore the sands, and experience true coastal wilderness.",
     image: IMAGES.jetski1,
+    alt: "Jet ski tour approaching Assateague Island Ocean City Maryland",
   },
 ];
 
@@ -217,7 +222,7 @@ export default function Home() {
               </ScrollReveal>
               <ScrollReveal direction="right" className="order-1 lg:order-2">
                 <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
-                  <Image src={IMAGES.scenery1} alt="Jet ski rider on Assateague Bay" fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover" />
+                  <Image src={IMAGES.scenery1} alt="Jet ski rental guided tour on Assateague Bay Ocean City MD" fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
                 </div>
               </ScrollReveal>
@@ -232,7 +237,7 @@ export default function Home() {
       <section className="relative h-[35vh] min-h-[250px] max-h-[400px] overflow-hidden">
         <Image
           src={IMAGES.scenery5}
-          alt="Assateague Bay panoramic view"
+          alt="Assateague Bay panoramic view — 50+ square miles of open water for jet ski and pontoon boat rentals in Ocean City MD"
           fill
           sizes="100vw"
           className="object-cover"
@@ -261,7 +266,7 @@ export default function Home() {
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <ScrollReveal direction="left">
               <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
-                <Image src={IMAGES.pontoon1} alt="Group enjoying pontoon boat cruise" fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover" />
+                <Image src={IMAGES.pontoon1} alt="Group enjoying self-guided pontoon boat rental cruise on Assateague Bay Ocean City MD" fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
               </div>
             </ScrollReveal>
@@ -346,7 +351,7 @@ export default function Home() {
             {EXPERIENCES.map((exp, i) => (
               <ScrollReveal key={exp.title} delay={i * 120}>
                 <div className="group relative h-80 md:h-96 rounded-2xl overflow-hidden shadow-lg">
-                  <Image src={exp.image} alt={exp.title} fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover group-hover:scale-105 transition-transform duration-700" />
+                  <Image src={exp.image} alt={exp.alt} fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover group-hover:scale-105 transition-transform duration-700" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent" />
                   <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
                     <h3 className="text-2xl md:text-3xl font-extrabold text-white mb-2 tracking-tight drop-shadow-md">{exp.title}</h3>
@@ -356,6 +361,24 @@ export default function Home() {
               </ScrollReveal>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════
+          INTERACTIVE BAY MAP — Explore the Riding Area
+      ═══════════════════════════════════════════════════════ */}
+      <section className="py-20 md:py-24 bg-gray-light">
+        <div className="max-w-6xl mx-auto px-4">
+          <ScrollReveal className="text-center mb-10">
+            <span className="inline-block px-4 py-1.5 bg-blue-light text-blue-brand text-xs font-bold uppercase tracking-widest rounded-full mb-4">Explore the Bay</span>
+            <h2 className="text-4xl md:text-5xl font-extrabold text-dark tracking-tight">Your Riding Area</h2>
+            <p className="text-gray-text text-lg mt-3 max-w-2xl mx-auto">
+              50+ square miles of Assateague Bay — wild horses, dolphins, sandbars, and stunning sunsets. Tap any pin to learn more.
+            </p>
+          </ScrollReveal>
+          <ScrollReveal>
+            <InteractiveMap />
+          </ScrollReveal>
         </div>
       </section>
 
@@ -488,9 +511,14 @@ export default function Home() {
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <ScrollReveal direction="left">
               <div className="grid grid-cols-2 gap-3">
-                {[IMAGES.jetski1, IMAGES.group1, IMAGES.pontoon2, IMAGES.jetski3].map((src, i) => (
+                {[
+                  { src: IMAGES.jetski1, alt: "Professional jet ski tour photo Ocean City MD" },
+                  { src: IMAGES.group1, alt: "OC Yacht Shots group adventure photo" },
+                  { src: IMAGES.pontoon2, alt: "Pontoon boat cruise captured by OC Yacht Shots" },
+                  { src: IMAGES.jetski3, alt: "Jet ski action photography Ocean City Maryland" },
+                ].map((photo, i) => (
                   <div key={i} className="relative aspect-[4/3] rounded-xl overflow-hidden shadow-lg">
-                    <Image src={src} alt={`Adventure photo ${i + 1}`} fill sizes="(max-width: 1024px) 50vw, 25vw" className="object-cover" />
+                    <Image src={photo.src} alt={photo.alt} fill sizes="(max-width: 1024px) 50vw, 25vw" className="object-cover" />
                   </div>
                 ))}
               </div>
@@ -575,7 +603,7 @@ export default function Home() {
           </ScrollReveal>
           <ScrollReveal direction="right" className="w-full md:w-96 flex-shrink-0">
             <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
-              <Image src={IMAGES.promo} alt="Buy 3 Get 4th Free promotion" fill sizes="400px" className="object-cover" />
+              <Image src={IMAGES.promo} alt="Buy 3 jet ski rides get 4th free promotion Ocean City MD" fill sizes="400px" className="object-cover" />
             </div>
           </ScrollReveal>
         </div>
@@ -651,7 +679,7 @@ export default function Home() {
           FINAL CTA
       ═══════════════════════════════════════════════════════ */}
       <section className="relative py-24 overflow-hidden">
-        <Image src={IMAGES.scenery2} alt="Ocean City sunset" fill sizes="100vw" className="object-cover" />
+        <Image src={IMAGES.scenery2} alt="Ocean City Maryland sunset over Assateague Bay — book jet ski and pontoon boat rentals" fill sizes="100vw" className="object-cover" />
         <div className="absolute inset-0 bg-gradient-to-b from-blue-dark/85 to-blue-dark/95" />
         <div className="relative z-10 text-center text-white px-4">
           <ScrollReveal>

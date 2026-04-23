@@ -3,8 +3,25 @@ import { Metadata } from "next";
 import { BOOKING_URL, IMAGES } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "OC Yacht Shots | Professional Adventure Photos | OC Downtown Adventures",
-  description: "Get professional photos of your jet ski and pontoon boat adventure in Ocean City, MD. Purchase and download high-quality images of your experience.",
+  title: "OC Yacht Shots | Professional Jet Ski & Boat Photos | Ocean City MD",
+  description:
+    "Get professional photos of your jet ski and pontoon boat adventure in Ocean City, MD. Action-packed images captured on the water — purchase and download high-quality photos of your ride.",
+  keywords: [
+    "ocean city adventure photos",
+    "jet ski photos ocean city md",
+    "pontoon boat photos ocean city",
+    "OC Yacht Shots",
+    "water sports photography ocean city maryland",
+  ],
+  alternates: {
+    canonical: "https://ocdowntownadventures.com/oc-yacht-shots",
+  },
+  openGraph: {
+    title: "OC Yacht Shots | Professional Adventure Photos | Ocean City MD",
+    description:
+      "Professional photos of your jet ski and pontoon boat adventure in Ocean City, MD. Capture the action!",
+    url: "https://ocdowntownadventures.com/oc-yacht-shots",
+  },
 };
 
 export default function OcYachtShotsPage() {
@@ -12,7 +29,7 @@ export default function OcYachtShotsPage() {
     <>
       {/* Hero */}
       <section className="relative h-[45vh] min-h-[320px] max-h-[500px] flex items-end justify-center overflow-hidden">
-        <Image src={IMAGES.scenery2} alt="OC Yacht Shots photography" fill sizes="100vw" className="object-cover" priority />
+        <Image src={IMAGES.scenery2} alt="Professional adventure photography for jet ski and boat rentals Ocean City MD" fill sizes="100vw" className="object-cover" priority />
         <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/45 to-black/25" />
         <div className="relative z-10 text-center text-white px-4 pb-10 md:pb-14 w-full max-w-4xl mx-auto">
           <span className="inline-block px-4 py-1.5 bg-yellow-brand text-dark text-xs font-bold uppercase tracking-widest rounded-full mb-4">Add-On</span>
@@ -64,9 +81,16 @@ export default function OcYachtShotsPage() {
         <div className="max-w-6xl mx-auto px-4">
           <h2 className="text-3xl font-extrabold text-dark mb-8 text-center">Sample Photos</h2>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-            {[IMAGES.jetski1, IMAGES.group1, IMAGES.pontoon2, IMAGES.jetski3, IMAGES.scenery3, IMAGES.pontoon4].map((src, i) => (
+            {[
+              { src: IMAGES.jetski1, alt: "Jet ski riders captured by OC Yacht Shots on Assateague Bay" },
+              { src: IMAGES.group1, alt: "Group jet ski tour photo Ocean City Maryland" },
+              { src: IMAGES.pontoon2, alt: "Pontoon boat cruise photography Ocean City MD" },
+              { src: IMAGES.jetski3, alt: "Action shot of jet ski rental on the bay" },
+              { src: IMAGES.scenery3, alt: "Scenic Assateague Bay view from boat rental" },
+              { src: IMAGES.pontoon4, alt: "Pontoon boat adventure photo at sunset Ocean City" },
+            ].map((photo, i) => (
               <div key={i} className="relative aspect-[4/3] rounded-xl overflow-hidden shadow-md">
-                <Image src={src} alt={`Sample adventure photo ${i + 1}`} fill sizes="(max-width: 768px) 50vw, 33vw" className="object-cover hover:scale-105 transition-transform duration-500" />
+                <Image src={photo.src} alt={photo.alt} fill sizes="(max-width: 768px) 50vw, 33vw" className="object-cover hover:scale-105 transition-transform duration-500" />
               </div>
             ))}
           </div>

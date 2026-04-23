@@ -3,12 +3,38 @@ import Link from "next/link";
 import { Metadata } from "next";
 import { BOOKING_URL, IMAGES, PHONE, PHONE_HREF, REVIEWS, HERO_VIDEO_URL, HERO_FALLBACK_IMAGE } from "@/lib/constants";
 import { ScrollReveal } from "@/components/ScrollReveal";
+import { faqSchema, serviceSchema, breadcrumbSchema } from "@/components/StructuredData";
 
 export const metadata: Metadata = {
-  title: "Pontoon Boat Rentals in Ocean City MD | Self-Guided Bay Cruises | OC Downtown Adventures",
+  title: "Pontoon Boat Rental Ocean City MD | Bay Cruises from $329 | Book Online",
   description:
-    "Rent a pontoon boat in Ocean City MD. Self-guided 2-8 hour bay cruises on Assateague Bay. See wild horses, anchor at sandbars, up to 10 guests. From $329. Free parking downtown.",
-  keywords: ["pontoon boat rental ocean city md", "pontoon cruise assateague bay", "ocean city boat rental", "self guided pontoon ocean city"],
+    "Rent a pontoon boat in Ocean City, Maryland — self-guided 2-8 hour cruises on Assateague Bay. See wild horses, anchor at sandbars, bring your own food & drinks. Up to 10 guests, no experience needed. Brand-new boats, free parking downtown. Book online today!",
+  keywords: [
+    "pontoon boat rental ocean city md",
+    "boat rental ocean city maryland",
+    "pontoon cruise ocean city",
+    "bay cruise ocean city md",
+    "boat ride ocean city",
+    "rent a boat ocean city md",
+    "self guided boat rental ocean city",
+    "assateague bay boat tour",
+    "ocean city pontoon boat",
+    "boat rental near me ocean city",
+    "pontoon boat cruise maryland",
+    "family boat rental ocean city md",
+    "party boat rental ocean city",
+    "sunset cruise ocean city md",
+    "fishing boat rental ocean city",
+  ],
+  alternates: {
+    canonical: "https://ocdowntownadventures.com/pontoon",
+  },
+  openGraph: {
+    title: "Pontoon Boat Rental in Ocean City, MD | From $329",
+    description: "Self-guided pontoon cruises on Assateague Bay. See wild horses, swim at sandbars, bring your crew. Up to 10 guests. Book online!",
+    url: "https://ocdowntownadventures.com/pontoon",
+    type: "website",
+  },
 };
 
 const HIGHLIGHTS = [
@@ -19,10 +45,10 @@ const HIGHLIGHTS = [
 ];
 
 const SIGHTS = [
-  { title: "Wild Horses", desc: "Anchor near Assateague Island and watch the famous wild horses graze feet from the water.", image: IMAGES.scenery4 },
-  { title: "Hidden Sandbars", desc: "Drop anchor at secluded sandbars for swimming, wading, and sunbathing in the bay.", image: IMAGES.scenery1 },
+  { title: "Wild Horses", desc: "Anchor your pontoon boat near Assateague Island and watch the famous wild horses graze feet from the water.", image: IMAGES.scenery4 },
+  { title: "Hidden Sandbars", desc: "Drop anchor at secluded sandbars for swimming, wading, and sunbathing during your boat rental.", image: IMAGES.scenery1 },
   { title: "Dolphins & Wildlife", desc: "Bottlenose dolphins, ospreys, and blue herons are regulars on the bay — keep your camera ready.", image: IMAGES.scenery3 },
-  { title: "Sunset Cruises", desc: "Book a late departure and watch the sky light up over Assateague Bay from the water.", image: IMAGES.scenery2 },
+  { title: "Sunset Cruises", desc: "Book a late departure for a sunset pontoon cruise and watch the sky light up over Assateague Bay.", image: IMAGES.scenery2 },
 ];
 
 const PRICING = [
@@ -67,9 +93,50 @@ const photos = [
   IMAGES.scenery1, IMAGES.scenery2,
 ];
 
+/* Gallery photos with SEO-rich alt text */
+const GALLERY_ALTS = [
+  "Pontoon boat rental cruising Assateague Bay in Ocean City MD",
+  "Group of friends on a pontoon boat rental in Ocean City Maryland",
+  "Pontoon boat anchored near Assateague Island wild horses Ocean City",
+  "Family pontoon boat cruise at sunset on Assateague Bay",
+  "Self-guided pontoon boat adventure on the bay Ocean City MD",
+  "Pontoon boat rental with canopy on Assateague Bay Maryland",
+  "Scenic view of Assateague Bay from a pontoon boat rental",
+  "Sunset pontoon cruise on the bay in Ocean City Maryland",
+];
+
 export default function PontoonPage() {
   return (
     <>
+      {/* Schema.org structured data for SEO */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(serviceSchema({
+            name: "Pontoon Boat Rental Ocean City MD",
+            description: "Self-guided pontoon boat rental on Assateague Bay in Ocean City, Maryland. 2-8 hour cruises for up to 10 guests. See wild horses on Assateague Island, anchor at sandbars, BYOB friendly. Brand new boats, free parking downtown.",
+            url: "https://ocdowntownadventures.com/pontoon",
+            price: "329",
+            image: IMAGES.pontoon1,
+          })),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(faqSchema(faqs)),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbSchema([
+            { name: "Home", url: "https://ocdowntownadventures.com" },
+            { name: "Pontoon Boat Rentals", url: "https://ocdowntownadventures.com/pontoon" },
+          ])),
+        }}
+      />
+
       {/* ── VIDEO HERO ── */}
       <section className="relative h-[70vh] min-h-[480px] max-h-[700px] flex items-end justify-center overflow-hidden">
         <video autoPlay muted loop playsInline poster={HERO_FALLBACK_IMAGE} className="absolute inset-0 w-full h-full object-cover">
@@ -139,7 +206,7 @@ export default function PontoonPage() {
             </ScrollReveal>
             <ScrollReveal direction="right">
               <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
-                <Image src={IMAGES.pontoon1} alt="Pontoon boat cruising Assateague Bay" fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover" />
+                <Image src={IMAGES.pontoon1} alt="Pontoon boat rental cruising through Assateague Bay in Ocean City Maryland" fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover" />
               </div>
             </ScrollReveal>
           </div>
@@ -384,7 +451,7 @@ export default function PontoonPage() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
             {photos.map((src, i) => (
               <div key={i} className="relative aspect-[4/3] rounded-xl overflow-hidden shadow-md group">
-                <Image src={src} alt={`Pontoon adventure ${i + 1}`} fill sizes="(max-width: 768px) 50vw, 25vw" className="object-cover group-hover:scale-105 transition-transform duration-500" />
+                <Image src={src} alt={GALLERY_ALTS[i] || `Pontoon boat rental adventure on Assateague Bay Ocean City MD ${i + 1}`} fill sizes="(max-width: 768px) 50vw, 25vw" className="object-cover group-hover:scale-105 transition-transform duration-500" />
               </div>
             ))}
           </div>
@@ -397,9 +464,21 @@ export default function PontoonPage() {
         </div>
       </section>
 
+      {/* ── ALSO EXPLORE ── */}
+      <section className="py-12 bg-white border-t border-gray-border">
+        <div className="max-w-4xl mx-auto px-4 text-center">
+          <p className="text-gray-text text-sm">
+            Looking for something faster? Check out our <Link href="/jet-ski" className="text-blue-brand font-semibold hover:underline">guided jet ski tours</Link> on Assateague Bay.
+            View our <Link href="/promotions" className="text-blue-brand font-semibold hover:underline">current deals and promotions</Link>,
+            or see what others are saying in our <Link href="/gallery" className="text-blue-brand font-semibold hover:underline">adventure photo gallery</Link>.
+            Have questions? Visit our <Link href="/faq" className="text-blue-brand font-semibold hover:underline">FAQ page</Link> or <Link href="/contact" className="text-blue-brand font-semibold hover:underline">contact us</Link> directly.
+          </p>
+        </div>
+      </section>
+
       {/* ── BOTTOM CTA ── */}
       <section className="relative py-20 overflow-hidden">
-        <Image src={IMAGES.scenery2} alt="Sunset on Assateague Bay" fill sizes="100vw" className="object-cover" />
+        <Image src={IMAGES.scenery2} alt="Sunset pontoon cruise on Assateague Bay Ocean City Maryland" fill sizes="100vw" className="object-cover" />
         <div className="absolute inset-0 bg-blue-dark/85" />
         <div className="relative z-10 text-center text-white px-4">
           <ScrollReveal>

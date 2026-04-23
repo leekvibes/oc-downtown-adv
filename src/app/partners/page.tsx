@@ -4,10 +4,25 @@ import { BOOKING_URL, IMAGES, PARTNERS, PHONE, PHONE_HREF, EMAIL } from "@/lib/c
 import { ScrollReveal } from "@/components/ScrollReveal";
 
 export const metadata: Metadata = {
-  title: "Our Partners | Local Ocean City Businesses | OC Downtown Adventures",
+  title: "Local Partners | Ocean City MD Restaurants & Businesses | OC Downtown Adventures",
   description:
-    "OC Downtown Adventures partners with the best local businesses in Ocean City, MD. Enjoy partner restaurant deals and make the most of your visit.",
-  keywords: ["ocean city md partners", "OC Downtown Adventures partners", "ocean city local businesses"],
+    "OC Downtown Adventures partners with the best local restaurants and businesses in Ocean City, MD. Exclusive deals for our jet ski and pontoon boat rental guests.",
+  keywords: [
+    "ocean city md local businesses",
+    "OC Downtown Adventures partners",
+    "ocean city restaurant deals",
+    "ocean city md water sports partners",
+    "things to do ocean city maryland",
+  ],
+  alternates: {
+    canonical: "https://ocdowntownadventures.com/partners",
+  },
+  openGraph: {
+    title: "Local Partners | Ocean City MD | OC Downtown Adventures",
+    description:
+      "Exclusive deals from our local partners in Ocean City, MD. Restaurants, activities, and more for our guests.",
+    url: "https://ocdowntownadventures.com/partners",
+  },
 };
 
 export default function PartnersPage() {
@@ -15,7 +30,7 @@ export default function PartnersPage() {
     <>
       {/* ── HERO ── */}
       <section className="relative h-[45vh] min-h-[320px] max-h-[500px] flex items-end justify-center overflow-hidden">
-        <Image src={IMAGES.group2} alt="Friends enjoying Ocean City" fill sizes="100vw" className="object-cover" priority />
+        <Image src={IMAGES.group2} alt="Friends enjoying jet ski and boat rental adventures in Ocean City MD" fill sizes="100vw" className="object-cover" priority />
         <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/45 to-black/25" />
         <div className="relative z-10 text-center text-white px-4 pb-10 md:pb-14 w-full max-w-4xl mx-auto">
           <span className="inline-block px-4 py-1.5 bg-yellow-brand text-dark text-xs font-bold uppercase tracking-widest rounded-full mb-4">Local Partners</span>
@@ -120,12 +135,12 @@ export default function PartnersPage() {
 
       {/* ── BOTTOM CTA ── */}
       <section className="relative py-20 overflow-hidden">
-        <Image src={IMAGES.scenery2} alt="Ocean City sunset" fill sizes="100vw" className="object-cover" />
+        <Image src={IMAGES.scenery2} alt="Sunset over Assateague Bay Ocean City Maryland" fill sizes="100vw" className="object-cover" />
         <div className="absolute inset-0 bg-blue-dark/85" />
         <div className="relative z-10 text-center text-white px-4">
           <ScrollReveal>
             <h2 className="text-3xl md:text-5xl font-extrabold mb-4 tracking-tight">Ready for Your Adventure?</h2>
-            <p className="text-white/90 text-lg mb-8 max-w-xl mx-auto">Book your ride and explore what makes Ocean City special.</p>
+            <p className="text-white/90 text-lg mb-8 max-w-xl mx-auto">Book your jet ski or pontoon boat rental and explore what makes Ocean City special.</p>
             <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="px-10 py-4 bg-yellow-brand text-dark font-bold text-lg rounded-lg hover:bg-yellow-hover transition-colors shadow-xl inline-block">Book Now</a>
           </ScrollReveal>
         </div>

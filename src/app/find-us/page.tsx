@@ -4,10 +4,26 @@ import { BOOKING_URL, IMAGES, PHONE, PHONE_HREF, ADDRESS, ADDRESS_URL, HOURS, LO
 import { ScrollReveal } from "@/components/ScrollReveal";
 
 export const metadata: Metadata = {
-  title: "Find Us | 307 Dorchester St | OC Downtown Adventures | Ocean City MD",
+  title: "Find Us | 307 Dorchester St, Ocean City MD | Jet Ski & Boat Rental Location",
   description:
-    "Visit OC Downtown Adventures at 307 Dorchester Street, Ocean City, MD 21842. Free parking, right in downtown. Get directions, parking info, and know what to expect before you arrive.",
-  keywords: ["OC Downtown Adventures location", "307 Dorchester Street Ocean City", "ocean city jet ski directions"],
+    "Visit OC Downtown Adventures at 307 Dorchester Street, Ocean City, MD 21842. Free parking, right in downtown on the bay. Get directions to the best jet ski and pontoon boat rental in Ocean City.",
+  keywords: [
+    "OC Downtown Adventures location",
+    "307 Dorchester Street Ocean City MD",
+    "ocean city jet ski directions",
+    "pontoon boat rental location ocean city",
+    "boat rental downtown ocean city maryland",
+    "free parking jet ski ocean city",
+  ],
+  alternates: {
+    canonical: "https://ocdowntownadventures.com/find-us",
+  },
+  openGraph: {
+    title: "Find Us | 307 Dorchester St, Ocean City MD",
+    description:
+      "Visit OC Downtown Adventures at 307 Dorchester Street, Ocean City, MD. Free parking, right in downtown on the bay.",
+    url: "https://ocdowntownadventures.com/find-us",
+  },
 };
 
 export default function FindUsPage() {
@@ -15,7 +31,7 @@ export default function FindUsPage() {
     <>
       {/* ── HERO ── */}
       <section className="relative h-[45vh] min-h-[320px] max-h-[500px] flex items-end justify-center overflow-hidden">
-        <Image src={IMAGES.scenery5} alt="Ocean City downtown waterfront" fill sizes="100vw" className="object-cover" priority />
+        <Image src={IMAGES.scenery5} alt="Ocean City downtown waterfront jet ski and pontoon boat dock" fill sizes="100vw" className="object-cover" priority />
         <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/45 to-black/25" />
         <div className="relative z-10 text-center text-white px-4 pb-10 md:pb-14 w-full max-w-4xl mx-auto">
           <span className="inline-block px-4 py-1.5 bg-yellow-brand text-dark text-xs font-bold uppercase tracking-widest rounded-full mb-4">Our Location</span>
@@ -98,10 +114,14 @@ export default function FindUsPage() {
             <p className="text-gray-text text-base mt-2">Here&apos;s what you&apos;ll see when you arrive at 307 Dorchester Street.</p>
           </ScrollReveal>
           <div className="grid md:grid-cols-3 gap-4">
-            {[IMAGES.pontoon4, IMAGES.group3, IMAGES.pontoon5].map((src, i) => (
+            {[
+              { src: IMAGES.pontoon4, alt: "Pontoon boats docked at 307 Dorchester Street Ocean City MD" },
+              { src: IMAGES.group3, alt: "Guests preparing for jet ski rental at our downtown Ocean City dock" },
+              { src: IMAGES.pontoon5, alt: "Pontoon boat rental launch area on Assateague Bay" },
+            ].map((photo, i) => (
               <ScrollReveal key={i} delay={i * 100}>
                 <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-lg">
-                  <Image src={src} alt={`Our dock ${i + 1}`} fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover hover:scale-105 transition-transform duration-500" />
+                  <Image src={photo.src} alt={photo.alt} fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover hover:scale-105 transition-transform duration-500" />
                 </div>
               </ScrollReveal>
             ))}
@@ -176,7 +196,7 @@ export default function FindUsPage() {
 
       {/* ── BOTTOM CTA ── */}
       <section className="relative py-20 overflow-hidden">
-        <Image src={IMAGES.scenery2} alt="Sunset over Assateague Bay" fill sizes="100vw" className="object-cover" />
+        <Image src={IMAGES.scenery2} alt="Sunset over Assateague Bay Ocean City Maryland boat rental" fill sizes="100vw" className="object-cover" />
         <div className="absolute inset-0 bg-blue-dark/85" />
         <div className="relative z-10 text-center text-white px-4">
           <ScrollReveal>

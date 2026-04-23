@@ -4,10 +4,28 @@ import { BOOKING_URL, IMAGES, PHONE, PHONE_HREF, SOCIAL } from "@/lib/constants"
 import { ScrollReveal } from "@/components/ScrollReveal";
 
 export const metadata: Metadata = {
-  title: "Promotions & Deals | Save on Jet Ski & Pontoon Rentals | OC Downtown Adventures",
+  title: "Deals & Promotions | Jet Ski & Boat Rental Discounts Ocean City MD",
   description:
-    "Save on jet ski and pontoon boat rentals in Ocean City, MD. Gift cards available! Current deals: Buy 3 jet ski rides, get the 4th free. Group discounts, sunset specials, and more.",
-  keywords: ["ocean city jet ski deals", "pontoon boat discount ocean city", "OC Downtown Adventures promotions", "ocean city gift card water sports"],
+    "Save on jet ski and pontoon boat rentals in Ocean City, MD. Gift cards available! Current deals: Buy 3 jet ski rides, get 4th free. Group discounts, sunset specials, and early booking deals.",
+  keywords: [
+    "ocean city jet ski deals",
+    "pontoon boat discount ocean city md",
+    "OC Downtown Adventures promotions",
+    "ocean city gift card water sports",
+    "jet ski group discount ocean city",
+    "boat rental deals ocean city maryland",
+    "cheap jet ski rental ocean city",
+    "pontoon boat coupon ocean city",
+  ],
+  alternates: {
+    canonical: "https://ocdowntownadventures.com/promotions",
+  },
+  openGraph: {
+    title: "Deals & Promotions | Jet Ski & Boat Rental Discounts Ocean City MD",
+    description:
+      "Save on jet ski and pontoon boat rentals in Ocean City, MD. Gift cards, group discounts, and more!",
+    url: "https://ocdowntownadventures.com/promotions",
+  },
 };
 
 /* ──────────────────────────────────────────────────────
@@ -106,7 +124,7 @@ export default function PromotionsPage() {
     <>
       {/* ── HERO ── */}
       <section className="relative h-[45vh] min-h-[320px] max-h-[500px] flex items-end justify-center overflow-hidden">
-        <Image src={IMAGES.group4} alt="Group on the water" fill sizes="100vw" className="object-cover" priority />
+        <Image src={IMAGES.group4} alt="Group enjoying jet ski and pontoon boat deals in Ocean City MD" fill sizes="100vw" className="object-cover" priority />
         <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/45 to-black/25" />
         <div className="relative z-10 text-center text-white px-4 pb-10 md:pb-14 w-full max-w-4xl mx-auto">
           <span className="inline-block px-4 py-1.5 bg-yellow-brand text-dark text-xs font-bold uppercase tracking-widest rounded-full mb-4">Save Big</span>
@@ -315,7 +333,7 @@ export default function PromotionsPage() {
 
       {/* ── BOTTOM CTA ── */}
       <section className="relative py-20 overflow-hidden">
-        <Image src={IMAGES.scenery2} alt="Ocean City sunset" fill sizes="100vw" className="object-cover" />
+        <Image src={IMAGES.scenery2} alt="Sunset boat ride on Assateague Bay Ocean City Maryland" fill sizes="100vw" className="object-cover" />
         <div className="absolute inset-0 bg-blue-dark/85" />
         <div className="relative z-10 text-center text-white px-4">
           <ScrollReveal>

@@ -5,10 +5,26 @@ import { ScrollReveal } from "@/components/ScrollReveal";
 import { ContactForm } from "@/components/ContactForm";
 
 export const metadata: Metadata = {
-  title: "Contact Us | OC Downtown Adventures | Ocean City MD",
+  title: "Contact Us | Jet Ski & Boat Rental Ocean City MD | OC Downtown Adventures",
   description:
-    "Get in touch with OC Downtown Adventures. Call, email, or message us about jet ski and pontoon boat rentals in Ocean City, MD. Open daily 8:30 AM – 8:30 PM.",
-  keywords: ["contact ocean city jet ski", "OC Downtown Adventures phone", "ocean city boat rental contact"],
+    "Contact OC Downtown Adventures for jet ski and pontoon boat rentals in Ocean City, MD. Call (443) 664-6180, email, or message us. Open daily 8:30 AM – 8:30 PM. Free parking downtown.",
+  keywords: [
+    "contact ocean city jet ski rental",
+    "OC Downtown Adventures phone number",
+    "ocean city boat rental contact",
+    "jet ski rental phone ocean city md",
+    "pontoon boat rental inquiry ocean city",
+    "book jet ski ocean city maryland",
+  ],
+  alternates: {
+    canonical: "https://ocdowntownadventures.com/contact",
+  },
+  openGraph: {
+    title: "Contact Us | Jet Ski & Boat Rental Ocean City MD",
+    description:
+      "Contact OC Downtown Adventures for jet ski and pontoon boat rentals in Ocean City, MD. Call, email, or message us.",
+    url: "https://ocdowntownadventures.com/contact",
+  },
 };
 
 export default function ContactPage() {
@@ -16,7 +32,7 @@ export default function ContactPage() {
     <>
       {/* ── HERO ── */}
       <section className="relative h-[45vh] min-h-[320px] max-h-[500px] flex items-end justify-center overflow-hidden">
-        <Image src={IMAGES.scenery2} alt="Ocean City sunset" fill sizes="100vw" className="object-cover" priority />
+        <Image src={IMAGES.scenery2} alt="Sunset over Assateague Bay Ocean City Maryland" fill sizes="100vw" className="object-cover" priority />
         <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/45 to-black/25" />
         <div className="relative z-10 text-center text-white px-4 pb-10 md:pb-14 w-full max-w-4xl mx-auto">
           <span className="inline-block px-4 py-1.5 bg-yellow-brand text-dark text-xs font-bold uppercase tracking-widest rounded-full mb-4">Get In Touch</span>
@@ -165,7 +181,7 @@ export default function ContactPage() {
 
       {/* ── BOTTOM CTA ── */}
       <section className="relative py-20 overflow-hidden">
-        <Image src={IMAGES.scenery1} alt="Assateague Bay" fill sizes="100vw" className="object-cover" />
+        <Image src={IMAGES.scenery1} alt="Assateague Bay boat rental launch point Ocean City MD" fill sizes="100vw" className="object-cover" />
         <div className="absolute inset-0 bg-blue-dark/85" />
         <div className="relative z-10 text-center text-white px-4">
           <ScrollReveal>

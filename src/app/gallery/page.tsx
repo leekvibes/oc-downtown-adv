@@ -8,29 +8,29 @@ const categories = ["All", "Jet Ski", "Pontoon", "Scenery"] as const;
 type Category = (typeof categories)[number];
 
 const photos: { src: string; category: Category; alt: string }[] = [
-  { src: IMAGES.jetski1, category: "Jet Ski", alt: "Jet ski riders on the bay" },
-  { src: IMAGES.jetski2, category: "Jet Ski", alt: "Jet ski action shot" },
-  { src: IMAGES.jetski3, category: "Jet Ski", alt: "Jet ski in motion" },
-  { src: IMAGES.jetski4, category: "Jet Ski", alt: "Jet ski adventure" },
-  { src: IMAGES.jetski5, category: "Jet Ski", alt: "Jet ski on open water" },
-  { src: IMAGES.jetski6, category: "Jet Ski", alt: "Jet ski fun" },
-  { src: IMAGES.jetski7, category: "Jet Ski", alt: "Jet ski group ride" },
-  { src: IMAGES.jetski8, category: "Jet Ski", alt: "Jet ski experience" },
-  { src: IMAGES.pontoon1, category: "Pontoon", alt: "Pontoon boat group" },
-  { src: IMAGES.pontoon2, category: "Pontoon", alt: "Pontoon boat cruise" },
-  { src: IMAGES.pontoon3, category: "Pontoon", alt: "Pontoon boat on the bay" },
-  { src: IMAGES.pontoon4, category: "Pontoon", alt: "Pontoon boat adventure" },
-  { src: IMAGES.pontoon5, category: "Pontoon", alt: "Pontoon boat family" },
-  { src: IMAGES.pontoon6, category: "Pontoon", alt: "Pontoon boat sunset" },
-  { src: IMAGES.scenery1, category: "Scenery", alt: "Assateague Bay sunset" },
-  { src: IMAGES.scenery2, category: "Scenery", alt: "Ocean City waterfront" },
-  { src: IMAGES.scenery3, category: "Scenery", alt: "Bay scenery" },
-  { src: IMAGES.scenery4, category: "Scenery", alt: "Coastal views" },
-  { src: IMAGES.scenery5, category: "Scenery", alt: "Water landscape" },
-  { src: IMAGES.group1, category: "Jet Ski", alt: "Group jet ski outing" },
-  { src: IMAGES.group2, category: "Pontoon", alt: "Group on pontoon" },
-  { src: IMAGES.group3, category: "Jet Ski", alt: "Friends on jet skis" },
-  { src: IMAGES.group4, category: "Pontoon", alt: "Family pontoon ride" },
+  { src: IMAGES.jetski1, category: "Jet Ski", alt: "Jet ski riders on Assateague Bay Ocean City MD" },
+  { src: IMAGES.jetski2, category: "Jet Ski", alt: "Jet ski rental action shot on open water Ocean City" },
+  { src: IMAGES.jetski3, category: "Jet Ski", alt: "Guided jet ski tour in motion Ocean City Maryland" },
+  { src: IMAGES.jetski4, category: "Jet Ski", alt: "Jet ski adventure near Assateague Island" },
+  { src: IMAGES.jetski5, category: "Jet Ski", alt: "Brand-new jet ski rental on open bay water Ocean City" },
+  { src: IMAGES.jetski6, category: "Jet Ski", alt: "Jet ski riding through waves Ocean City MD" },
+  { src: IMAGES.jetski7, category: "Jet Ski", alt: "Group jet ski tour on Assateague Bay" },
+  { src: IMAGES.jetski8, category: "Jet Ski", alt: "Thrilling jet ski experience Ocean City Maryland" },
+  { src: IMAGES.pontoon1, category: "Pontoon", alt: "Group pontoon boat rental cruise Ocean City MD" },
+  { src: IMAGES.pontoon2, category: "Pontoon", alt: "Pontoon boat cruise on Assateague Bay" },
+  { src: IMAGES.pontoon3, category: "Pontoon", alt: "Pontoon boat near Assateague Island wild horses" },
+  { src: IMAGES.pontoon4, category: "Pontoon", alt: "Pontoon boat rental docked in Ocean City Maryland" },
+  { src: IMAGES.pontoon5, category: "Pontoon", alt: "Family pontoon boat rental on the bay" },
+  { src: IMAGES.pontoon6, category: "Pontoon", alt: "Sunset pontoon boat cruise Ocean City MD" },
+  { src: IMAGES.scenery1, category: "Scenery", alt: "Sunset over Assateague Bay Ocean City Maryland" },
+  { src: IMAGES.scenery2, category: "Scenery", alt: "Ocean City MD waterfront golden sunset" },
+  { src: IMAGES.scenery3, category: "Scenery", alt: "Dolphins in Assateague Bay near boat rentals" },
+  { src: IMAGES.scenery4, category: "Scenery", alt: "Wild horses on Assateague Island from the water" },
+  { src: IMAGES.scenery5, category: "Scenery", alt: "Panoramic view of Assateague Bay riding area" },
+  { src: IMAGES.group1, category: "Jet Ski", alt: "Group jet ski outing with OC Downtown Adventures" },
+  { src: IMAGES.group2, category: "Pontoon", alt: "Group enjoying pontoon boat rental Ocean City" },
+  { src: IMAGES.group3, category: "Jet Ski", alt: "Friends on jet ski guided tour Ocean City MD" },
+  { src: IMAGES.group4, category: "Pontoon", alt: "Family pontoon boat ride on Assateague Bay" },
 ];
 
 export default function GalleryPage() {
@@ -43,7 +43,7 @@ export default function GalleryPage() {
     <>
       {/* Hero */}
       <section className="relative h-[45vh] min-h-[320px] max-h-[500px] flex items-end justify-center overflow-hidden">
-        <Image src={IMAGES.scenery2} alt="Ocean City bay" fill sizes="100vw" className="object-cover" priority />
+        <Image src={IMAGES.scenery2} alt="Ocean City MD bay jet ski and pontoon boat rental area" fill sizes="100vw" className="object-cover" priority />
         <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/45 to-black/25" />
         <div className="relative z-10 text-center text-white px-4 pb-10 md:pb-14 w-full max-w-4xl mx-auto">
           <span className="inline-block px-4 py-1.5 bg-yellow-brand text-dark text-xs font-bold uppercase tracking-widest rounded-full mb-4">Photo Gallery</span>
@@ -141,7 +141,7 @@ export default function GalleryPage() {
 
       {/* CTA */}
       <section className="relative py-20 overflow-hidden">
-        <Image src={IMAGES.scenery1} alt="Bay scenery" fill sizes="100vw" className="object-cover" />
+        <Image src={IMAGES.scenery1} alt="Assateague Bay scenery from boat rental Ocean City MD" fill sizes="100vw" className="object-cover" />
         <div className="absolute inset-0 bg-blue-dark/85" />
         <div className="relative z-10 text-center text-white px-4">
           <h2 className="text-3xl md:text-5xl font-extrabold mb-4 tracking-tight">Want to Be in Our Next Photo?</h2>

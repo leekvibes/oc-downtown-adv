@@ -1,10 +1,31 @@
 import Image from "next/image";
 import { Metadata } from "next";
 import { BOOKING_URL, IMAGES, PHONE, PHONE_HREF } from "@/lib/constants";
+import { faqSchema, breadcrumbSchema } from "@/components/StructuredData";
+import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "FAQ & Policies | OC Downtown Adventures",
-  description: "Frequently asked questions about jet ski and pontoon boat rentals in Ocean City, MD. Booking policies, age requirements, weather policy, and more.",
+  title: "FAQ | Jet Ski & Pontoon Boat Rental Questions | Ocean City MD",
+  description:
+    "Got questions about jet ski or pontoon boat rentals in Ocean City, MD? Find answers about booking, age requirements, cancellation policy, safety, parking, and more. OC Downtown Adventures.",
+  keywords: [
+    "jet ski rental FAQ ocean city md",
+    "pontoon boat rental questions ocean city",
+    "ocean city boat rental policy",
+    "jet ski age requirement ocean city",
+    "pontoon boat rental rules ocean city md",
+    "ocean city water sports FAQ",
+    "boat rental cancellation policy ocean city",
+  ],
+  alternates: {
+    canonical: "https://ocdowntownadventures.com/faq",
+  },
+  openGraph: {
+    title: "FAQ | Jet Ski & Pontoon Boat Rental Questions | Ocean City MD",
+    description:
+      "Got questions about jet ski or pontoon boat rentals in Ocean City, MD? Find answers about booking, age requirements, safety, and more.",
+    url: "https://ocdowntownadventures.com/faq",
+  },
 };
 
 const sections = [
@@ -62,12 +83,32 @@ const sections = [
   },
 ];
 
+/* Flatten all FAQs for schema markup */
+const ALL_FAQS = sections.flatMap((s) => s.faqs);
+
 export default function FaqPage() {
   return (
     <>
+      {/* JSON-LD Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema(ALL_FAQS)) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            breadcrumbSchema([
+              { name: "Home", url: "https://ocdowntownadventures.com" },
+              { name: "FAQ", url: "https://ocdowntownadventures.com/faq" },
+            ])
+          ),
+        }}
+      />
+
       {/* Hero */}
       <section className="relative h-[45vh] min-h-[320px] max-h-[500px] flex items-end justify-center overflow-hidden">
-        <Image src={IMAGES.scenery3} alt="Assateague Bay" fill sizes="100vw" className="object-cover" priority />
+        <Image src={IMAGES.scenery3} alt="Assateague Bay sunset Ocean City Maryland" fill sizes="100vw" className="object-cover" priority />
         <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/45 to-black/25" />
         <div className="relative z-10 text-center text-white px-4 pb-10 md:pb-14 w-full max-w-4xl mx-auto">
           <span className="inline-block px-4 py-1.5 bg-yellow-brand text-dark text-xs font-bold uppercase tracking-widest rounded-full mb-4">FAQ</span>
@@ -103,9 +144,29 @@ export default function FaqPage() {
         </div>
       </section>
 
+      {/* Internal Links */}
+      <section className="py-12 bg-gray-light">
+        <div className="max-w-4xl mx-auto px-4">
+          <h2 className="text-2xl font-extrabold text-dark mb-6 text-center tracking-tight">Explore More</h2>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {[
+              { label: "Jet Ski Rentals", href: "/jet-ski", desc: "From $129/hr" },
+              { label: "Pontoon Boat Rentals", href: "/pontoon", desc: "From $329" },
+              { label: "Deals & Promotions", href: "/promotions", desc: "Save big" },
+              { label: "Contact Us", href: "/contact", desc: "Get in touch" },
+            ].map((link) => (
+              <Link key={link.href} href={link.href} className="bg-white rounded-xl p-4 border border-gray-border hover:shadow-md transition-shadow text-center group">
+                <p className="font-bold text-dark group-hover:text-blue-brand transition-colors">{link.label}</p>
+                <p className="text-xs text-gray-text mt-1">{link.desc}</p>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Still have questions */}
       <section className="relative py-20 overflow-hidden">
-        <Image src={IMAGES.scenery2} alt="Ocean City sunset" fill sizes="100vw" className="object-cover" />
+        <Image src={IMAGES.scenery2} alt="Sunset over Assateague Bay Ocean City MD" fill sizes="100vw" className="object-cover" />
         <div className="absolute inset-0 bg-blue-dark/85" />
         <div className="relative z-10 text-center text-white px-4">
           <h2 className="text-3xl md:text-5xl font-extrabold mb-4 tracking-tight">Still Have Questions?</h2>
