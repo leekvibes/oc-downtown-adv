@@ -20,6 +20,7 @@ export const metadata: Metadata = {
     canonical: "https://ocdowntownadventures.com/contact",
   },
   openGraph: {
+    images: ["/og-logo.png"],
     title: "Contact Us | Jet Ski & Boat Rental Ocean City MD",
     description:
       "Contact OC Downtown Adventures for jet ski and pontoon boat rentals in Ocean City, MD. Call, email, or message us.",

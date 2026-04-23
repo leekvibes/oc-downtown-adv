@@ -21,6 +21,7 @@ export const metadata: Metadata = {
     canonical: "https://ocdowntownadventures.com/promotions",
   },
   openGraph: {
+    images: ["/og-logo.png"],
     title: "Deals & Promotions | Jet Ski & Boat Rental Discounts Ocean City MD",
     description:
       "Save on jet ski and pontoon boat rentals in Ocean City, MD. Gift cards, group discounts, and more!",

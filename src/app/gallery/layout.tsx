@@ -16,6 +16,7 @@ export const metadata: Metadata = {
     canonical: "https://ocdowntownadventures.com/gallery",
   },
   openGraph: {
+    images: ["/og-logo.png"],
     title: "Photo Gallery | Jet Ski & Pontoon Adventures | Ocean City MD",
     description:
       "Browse real photos from jet ski and pontoon boat adventures in Ocean City, MD on Assateague Bay.",

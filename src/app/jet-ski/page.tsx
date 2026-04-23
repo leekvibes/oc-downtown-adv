@@ -29,6 +29,7 @@ export const metadata: Metadata = {
     description: "1-hour guided jet ski tours on Assateague Bay. Brand-new Sea-Doo jet skis, wild horses, dolphins. Book online!",
     url: "https://ocdowntownadventures.com/jet-ski",
     type: "website",
+    images: ["/og-logo.png"],
   },
 };
 

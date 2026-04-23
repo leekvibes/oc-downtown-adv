@@ -58,6 +58,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "OC Downtown Adventures | Jet Ski & Pontoon Boat Rentals",
     description: "Book jet ski and pontoon boat rentals in Ocean City, MD. Explore Assateague Bay!",
+    images: ["/og-logo.png"],
   },
   alternates: {
     canonical: "https://ocdowntownadventures.com",

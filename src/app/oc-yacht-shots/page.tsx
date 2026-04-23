@@ -17,6 +17,7 @@ export const metadata: Metadata = {
     canonical: "https://ocdowntownadventures.com/oc-yacht-shots",
   },
   openGraph: {
+    images: ["/og-logo.png"],
     title: "OC Yacht Shots | Professional Adventure Photos | Ocean City MD",
     description:
       "Professional photos of your jet ski and pontoon boat adventure in Ocean City, MD. Capture the action!",

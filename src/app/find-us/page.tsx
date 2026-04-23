@@ -19,6 +19,7 @@ export const metadata: Metadata = {
     canonical: "https://ocdowntownadventures.com/find-us",
   },
   openGraph: {
+    images: ["/og-logo.png"],
     title: "Find Us | 307 Dorchester St, Ocean City MD",
     description:
       "Visit OC Downtown Adventures at 307 Dorchester Street, Ocean City, MD. Free parking, right in downtown on the bay.",

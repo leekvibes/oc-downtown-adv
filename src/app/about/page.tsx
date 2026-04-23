@@ -21,6 +21,7 @@ export const metadata: Metadata = {
     canonical: "https://ocdowntownadventures.com/about",
   },
   openGraph: {
+    images: ["/og-logo.png"],
     title: "About Us | Family-Owned Jet Ski & Boat Rental | Ocean City MD",
     description:
       "Meet the family behind OC Downtown Adventures — Ocean City's top-rated jet ski and pontoon boat rental.",

@@ -21,6 +21,7 @@ export const metadata: Metadata = {
     canonical: "https://ocdowntownadventures.com/faq",
   },
   openGraph: {
+    images: ["/og-logo.png"],
     title: "FAQ | Jet Ski & Pontoon Boat Rental Questions | Ocean City MD",
     description:
       "Got questions about jet ski or pontoon boat rentals in Ocean City, MD? Find answers about booking, age requirements, safety, and more.",

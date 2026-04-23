@@ -18,6 +18,7 @@ export const metadata: Metadata = {
     canonical: "https://ocdowntownadventures.com/partners",
   },
   openGraph: {
+    images: ["/og-logo.png"],
     title: "Local Partners | Ocean City MD | OC Downtown Adventures",
     description:
       "Exclusive deals from our local partners in Ocean City, MD. Restaurants, activities, and more for our guests.",

@@ -34,6 +34,7 @@ export const metadata: Metadata = {
     description: "Self-guided pontoon cruises on Assateague Bay. See wild horses, swim at sandbars, bring your crew. Up to 10 guests. Book online!",
     url: "https://ocdowntownadventures.com/pontoon",
     type: "website",
+    images: ["/og-logo.png"],
   },
 };
 
