@@ -6,8 +6,8 @@ import { ScrollReveal } from "@/components/ScrollReveal";
 export const metadata: Metadata = {
   title: "Promotions & Deals | Save on Jet Ski & Pontoon Rentals | OC Downtown Adventures",
   description:
-    "Save on jet ski and pontoon boat rentals in Ocean City, MD. Current deals: Buy 3 jet ski rides, get the 4th free. Group discounts, sunset specials, and more.",
-  keywords: ["ocean city jet ski deals", "pontoon boat discount ocean city", "OC Downtown Adventures promotions"],
+    "Save on jet ski and pontoon boat rentals in Ocean City, MD. Gift cards available! Current deals: Buy 3 jet ski rides, get the 4th free. Group discounts, sunset specials, and more.",
+  keywords: ["ocean city jet ski deals", "pontoon boat discount ocean city", "OC Downtown Adventures promotions", "ocean city gift card water sports"],
 };
 
 /* ──────────────────────────────────────────────────────
@@ -152,6 +152,94 @@ export default function PromotionsPage() {
           </div>
         </section>
       )}
+
+      {/* ── GIFT CARDS ── */}
+      <section className="py-16 md:py-20 bg-gradient-to-br from-yellow-brand via-yellow-hover to-yellow-brand relative overflow-hidden">
+        {/* Decorative circles */}
+        <div className="absolute -top-20 -right-20 w-72 h-72 bg-white/10 rounded-full" />
+        <div className="absolute -bottom-16 -left-16 w-56 h-56 bg-white/10 rounded-full" />
+        <div className="max-w-5xl mx-auto px-4 relative z-10">
+          <ScrollReveal>
+            <div className="grid md:grid-cols-2 gap-8 items-center">
+              {/* Left — text & CTA */}
+              <div>
+                <span className="inline-block px-4 py-1.5 bg-dark text-white text-xs font-bold uppercase tracking-widest rounded-full mb-5">
+                  Perfect Gift
+                </span>
+                <h2 className="text-3xl md:text-5xl font-extrabold text-dark tracking-tight mb-4">
+                  Give the Gift of Adventure
+                </h2>
+                <p className="text-dark/80 text-base md:text-lg leading-relaxed mb-6">
+                  Know someone who loves the water? OC Downtown Adventures gift cards let them choose their own adventure — jet ski rides, pontoon cruises, or any experience we offer. Pick any amount and send it instantly.
+                </p>
+                <ul className="space-y-3 mb-8">
+                  {[
+                    "Choose any dollar amount",
+                    "Delivered instantly via email",
+                    "Valid for all rentals & experiences",
+                    "Never expires",
+                  ].map((item, i) => (
+                    <li key={i} className="flex items-center gap-3 text-dark/90 font-medium">
+                      <span className="w-6 h-6 bg-dark rounded-full flex items-center justify-center flex-shrink-0">
+                        <svg className="w-3.5 h-3.5 text-yellow-brand" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                        </svg>
+                      </span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+                <a
+                  href={BOOKING_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-3 px-8 py-4 bg-dark text-white font-bold text-lg rounded-lg hover:bg-blue-dark transition-all shadow-xl hover:scale-105"
+                >
+                  <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7" />
+                  </svg>
+                  Purchase a Gift Card
+                </a>
+              </div>
+
+              {/* Right — visual gift card */}
+              <div className="flex justify-center">
+                <div className="relative w-full max-w-sm">
+                  {/* Card shadow */}
+                  <div className="absolute inset-4 bg-dark/20 rounded-2xl blur-xl" />
+                  {/* Gift card */}
+                  <div className="relative bg-gradient-to-br from-blue-dark to-blue-brand rounded-2xl p-8 text-white shadow-2xl border border-white/20 aspect-[3/2] flex flex-col justify-between">
+                    {/* Top row */}
+                    <div className="flex justify-between items-start">
+                      <div>
+                        <p className="text-xs uppercase tracking-widest text-white/60 mb-1">Gift Card</p>
+                        <p className="text-2xl font-extrabold">OC Downtown</p>
+                        <p className="text-sm font-semibold text-yellow-brand">Adventures</p>
+                      </div>
+                      <div className="w-12 h-12 bg-yellow-brand rounded-full flex items-center justify-center">
+                        <svg className="w-6 h-6 text-dark" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7" />
+                        </svg>
+                      </div>
+                    </div>
+                    {/* Bottom row */}
+                    <div className="flex justify-between items-end">
+                      <div>
+                        <p className="text-xs text-white/50 mb-1">Amount</p>
+                        <p className="text-3xl font-extrabold">You Choose</p>
+                      </div>
+                      <div className="text-right">
+                        <p className="text-[10px] uppercase tracking-wider text-white/40">Ocean City, MD</p>
+                        <p className="text-[10px] uppercase tracking-wider text-white/40">Jet Skis &bull; Pontoons</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
 
       {/* ── MORE DEALS ── */}
       <section className="py-16 md:py-20 bg-gray-light">
