@@ -110,9 +110,9 @@ export default function Home() {
           />
 
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-3 drop-shadow-lg tracking-tight">
-            Your Ocean City Adventure
+            Explore Assateague Bay on
             <br />
-            <span className="text-yellow-brand">Starts Here</span>
+            <span className="text-yellow-brand">Brand-New Jet Skis &amp; Pontoon Boats</span>
           </h1>
 
           <a
