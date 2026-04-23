@@ -54,19 +54,7 @@ body {
   transform: translateX(0);
 }
 
-/* Ocean banner animations */
-@keyframes cruise-right {
-  from { transform: translateX(-60px) translateY(-50%); }
-  to { transform: translateX(calc(100vw + 60px)) translateY(-50%); }
-}
-@keyframes cruise-left {
-  from { transform: translateX(calc(100vw + 60px)) translateY(-50%); }
-  to { transform: translateX(-60px) translateY(-50%); }
-}
-@keyframes drift {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
-}
+/* Ticker scroll animation */
 @keyframes ticker {
   from { transform: translateX(0); }
   to { transform: translateX(-50%); }
