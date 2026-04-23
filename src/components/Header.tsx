@@ -9,12 +9,11 @@ const MENU_LINKS = [
   { href: "/", label: "Home" },
   { href: "/jet-ski", label: "Jet Ski Rentals" },
   { href: "/pontoon", label: "Pontoon Boats" },
-  { href: "/gallery", label: "Gallery" },
-  { href: "/oc-yacht-shots", label: "OC Yacht Shots" },
   { href: "/about", label: "About Us" },
   { href: "/contact", label: "Contact Us" },
   { href: "/find-us", label: "Find Us" },
   { href: "/partners", label: "Partners" },
+  { href: "/gallery", label: "Gallery" },
   { href: "/faq", label: "FAQ & Policies" },
   { href: "/promotions", label: "Promotions" },
 ];
@@ -24,13 +23,10 @@ const DESKTOP_LINKS = [
   { href: "/", label: "Home" },
   { href: "/jet-ski", label: "Jet Skis" },
   { href: "/pontoon", label: "Pontoons" },
-  { href: "/gallery", label: "Gallery" },
-  { href: "/oc-yacht-shots", label: "Yacht Shots" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
   { href: "/find-us", label: "Find Us" },
   { href: "/partners", label: "Partners" },
-  { href: "/faq", label: "FAQ" },
 ];
 
 /** Close the mobile menu by unchecking the hidden checkbox.
@@ -104,9 +100,6 @@ export function Header() {
 
             {/* ── Mobile right side ── */}
             <div className="flex lg:hidden items-center gap-1.5 sm:gap-2 flex-shrink-0">
-              <Link href="/gallery" className="px-2 py-1.5 text-[11px] sm:text-xs font-semibold text-dark hover:text-blue-brand transition-colors">
-                Gallery
-              </Link>
               <Link href="/partners" className="px-2 py-1.5 text-[11px] sm:text-xs font-semibold text-dark hover:text-blue-brand transition-colors">
                 Partners
               </Link>

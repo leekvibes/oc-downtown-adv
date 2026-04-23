@@ -413,6 +413,59 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════════════════════════════════════════
+          ADD-ON: OC YACHT SHOTS
+      ═══════════════════════════════════════════════════════ */}
+      <section className="py-20 md:py-24 bg-white overflow-hidden">
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <ScrollReveal direction="left">
+              <div className="grid grid-cols-2 gap-3">
+                {[IMAGES.jetski1, IMAGES.group1, IMAGES.pontoon2, IMAGES.jetski3].map((src, i) => (
+                  <div key={i} className="relative aspect-[4/3] rounded-xl overflow-hidden shadow-lg">
+                    <Image src={src} alt={`Adventure photo ${i + 1}`} fill sizes="(max-width: 1024px) 50vw, 25vw" className="object-cover" />
+                  </div>
+                ))}
+              </div>
+            </ScrollReveal>
+            <ScrollReveal direction="right">
+              <span className="inline-block px-4 py-1.5 bg-yellow-brand/20 text-dark text-xs font-bold uppercase tracking-widest rounded-full mb-4">Add-On</span>
+              <h2 className="text-4xl md:text-5xl font-extrabold text-dark mb-5 leading-tight tracking-tight">
+                OC Yacht Shots
+              </h2>
+              <p className="text-gray-text text-lg leading-relaxed mb-6">
+                Don&apos;t let your best moments disappear with the waves. Our professional photographers capture your adventure on the water so you can relive it forever — high-quality, action-packed photos of your ride.
+              </p>
+              <div className="grid grid-cols-3 gap-4 mb-8">
+                {[
+                  { step: "1", title: "Ride & Smile", desc: "We capture the action" },
+                  { step: "2", title: "Find Photos", desc: "Browse your images" },
+                  { step: "3", title: "Download", desc: "Share with everyone" },
+                ].map((item) => (
+                  <div key={item.step} className="text-center">
+                    <div className="w-10 h-10 bg-blue-brand text-white rounded-full flex items-center justify-center text-sm font-bold mx-auto mb-2">{item.step}</div>
+                    <h3 className="text-sm font-bold text-dark">{item.title}</h3>
+                    <p className="text-xs text-gray-text mt-0.5">{item.desc}</p>
+                  </div>
+                ))}
+              </div>
+              <a
+                href="https://www.ocyachtshots.com/home"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-8 py-3.5 bg-blue-brand text-white font-bold rounded-lg hover:bg-blue-dark transition-colors shadow-md"
+              >
+                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+                Find Your Photos
+              </a>
+            </ScrollReveal>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════
           AUTO-SCROLLING GALLERY
       ═══════════════════════════════════════════════════════ */}
       <section className="py-16 md:py-20 bg-white overflow-hidden">
