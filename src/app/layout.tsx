@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { MobileStickyBar } from "@/components/MobileStickyBar";
 
-const inter = Inter({
+const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-inter",
+  variable: "--font-space",
 });
 
 export const metadata: Metadata = {
@@ -45,8 +45,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} h-full`}>
-      <body className="min-h-full flex flex-col font-[family-name:var(--font-inter)] antialiased">
+    <html lang="en" className={`${spaceGrotesk.variable} h-full`}>
+      <body className="min-h-full flex flex-col font-[family-name:var(--font-space)] antialiased">
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
