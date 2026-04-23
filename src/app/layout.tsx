@@ -13,8 +13,15 @@ const spaceGrotesk = Space_Grotesk({
   variable: "--font-space",
 });
 
+/* ── metadataBase: on Vercel previews, resolve OG images against the Vercel
+   deployment URL (so link previews work). Once DNS is connected, this
+   automatically falls back to the production domain. ── */
+const siteUrl = process.env.VERCEL_URL
+  ? `https://${process.env.VERCEL_URL}`
+  : "https://ocdowntownadventures.com";
+
 export const metadata: Metadata = {
-  metadataBase: new URL("https://ocdowntownadventures.com"),
+  metadataBase: new URL(siteUrl),
   title: {
     default: "OC Downtown Adventures | Jet Ski & Pontoon Boat Rentals in Ocean City, MD",
     template: "%s | OC Downtown Adventures",
