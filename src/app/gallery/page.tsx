@@ -41,11 +41,14 @@ export default function GalleryPage() {
 
   return (
     <>
-      {/* Header */}
-      <section className="bg-blue-brand text-white py-16 text-center">
-        <div className="max-w-4xl mx-auto px-4">
-          <h1 className="text-4xl md:text-5xl font-extrabold mb-3">Our Adventures</h1>
-          <p className="text-blue-200 text-lg">Real photos from real adventures on the water</p>
+      {/* Hero */}
+      <section className="relative h-[45vh] min-h-[320px] max-h-[500px] flex items-end justify-center overflow-hidden">
+        <Image src={IMAGES.scenery2} alt="Ocean City bay" fill sizes="100vw" className="object-cover" priority />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20" />
+        <div className="relative z-10 text-center text-white px-4 pb-10 md:pb-14 w-full max-w-4xl mx-auto">
+          <span className="inline-block px-4 py-1.5 bg-yellow-brand text-dark text-xs font-bold uppercase tracking-widest rounded-full mb-4">Photo Gallery</span>
+          <h1 className="text-4xl md:text-6xl font-extrabold mb-3 drop-shadow-lg tracking-tight">Our Adventures</h1>
+          <p className="text-lg md:text-xl text-white/90">Real photos from real adventures on the water</p>
         </div>
       </section>
 
@@ -137,10 +140,12 @@ export default function GalleryPage() {
       )}
 
       {/* CTA */}
-      <section className="py-12 bg-blue-brand text-white text-center">
-        <div className="max-w-3xl mx-auto px-4">
-          <h2 className="text-3xl font-extrabold mb-4">Want to Be in Our Next Photo?</h2>
-          <p className="text-blue-200 mb-6">Book your adventure and make memories on the water!</p>
+      <section className="relative py-20 overflow-hidden">
+        <Image src={IMAGES.scenery1} alt="Bay scenery" fill sizes="100vw" className="object-cover" />
+        <div className="absolute inset-0 bg-blue-dark/85" />
+        <div className="relative z-10 text-center text-white px-4">
+          <h2 className="text-3xl md:text-5xl font-extrabold mb-4 tracking-tight">Want to Be in Our Next Photo?</h2>
+          <p className="text-white/80 text-lg mb-8">Book your adventure and make memories on the water!</p>
           <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="px-10 py-4 bg-yellow-brand text-dark font-bold text-lg rounded-lg hover:bg-yellow-hover transition-colors shadow-xl inline-block">Book Now</a>
         </div>
       </section>

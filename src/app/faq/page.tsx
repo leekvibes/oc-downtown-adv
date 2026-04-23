@@ -1,5 +1,6 @@
+import Image from "next/image";
 import { Metadata } from "next";
-import { BOOKING_URL, PHONE, PHONE_HREF } from "@/lib/constants";
+import { BOOKING_URL, IMAGES, PHONE, PHONE_HREF } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "FAQ & Policies | OC Downtown Adventures",
@@ -64,11 +65,14 @@ const sections = [
 export default function FaqPage() {
   return (
     <>
-      {/* Header */}
-      <section className="bg-blue-brand text-white py-16 text-center">
-        <div className="max-w-4xl mx-auto px-4">
-          <h1 className="text-4xl md:text-5xl font-extrabold mb-3">FAQ & Policies</h1>
-          <p className="text-blue-200 text-lg">Everything you need to know before your adventure</p>
+      {/* Hero */}
+      <section className="relative h-[45vh] min-h-[320px] max-h-[500px] flex items-end justify-center overflow-hidden">
+        <Image src={IMAGES.scenery3} alt="Assateague Bay" fill sizes="100vw" className="object-cover" priority />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20" />
+        <div className="relative z-10 text-center text-white px-4 pb-10 md:pb-14 w-full max-w-4xl mx-auto">
+          <span className="inline-block px-4 py-1.5 bg-yellow-brand text-dark text-xs font-bold uppercase tracking-widest rounded-full mb-4">FAQ</span>
+          <h1 className="text-4xl md:text-6xl font-extrabold mb-3 drop-shadow-lg tracking-tight">FAQ & Policies</h1>
+          <p className="text-lg md:text-xl text-white/90">Everything you need to know before your adventure</p>
         </div>
       </section>
 
@@ -100,16 +104,17 @@ export default function FaqPage() {
       </section>
 
       {/* Still have questions */}
-      <section className="py-16 bg-gray-light">
-        <div className="max-w-3xl mx-auto px-4 text-center">
-          <h2 className="text-3xl font-extrabold text-dark mb-4">Still Have Questions?</h2>
-          <p className="text-gray-text text-lg mb-8">We&apos;re happy to help! Give us a call or book your adventure today.</p>
+      <section className="relative py-20 overflow-hidden">
+        <Image src={IMAGES.scenery2} alt="Ocean City sunset" fill sizes="100vw" className="object-cover" />
+        <div className="absolute inset-0 bg-blue-dark/85" />
+        <div className="relative z-10 text-center text-white px-4">
+          <h2 className="text-3xl md:text-5xl font-extrabold mb-4 tracking-tight">Still Have Questions?</h2>
+          <p className="text-white/80 text-lg mb-8 max-w-xl mx-auto">We&apos;re happy to help! Give us a call or book your adventure today.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href={PHONE_HREF} className="px-8 py-4 bg-blue-brand text-white font-bold text-lg rounded-lg hover:bg-blue-dark transition-colors shadow-md inline-flex items-center justify-center gap-2">
-              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
+            <a href={PHONE_HREF} className="px-10 py-4 border-2 border-white text-white font-bold text-lg rounded-lg hover:bg-white hover:text-blue-brand transition-colors inline-flex items-center justify-center gap-2">
               Call {PHONE}
             </a>
-            <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="px-8 py-4 bg-yellow-brand text-dark font-bold text-lg rounded-lg hover:bg-yellow-hover transition-colors shadow-md">Book Now</a>
+            <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="px-10 py-4 bg-yellow-brand text-dark font-bold text-lg rounded-lg hover:bg-yellow-hover transition-colors shadow-xl">Book Now</a>
           </div>
         </div>
       </section>

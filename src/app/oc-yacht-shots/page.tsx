@@ -11,12 +11,13 @@ export default function OcYachtShotsPage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative h-[50vh] min-h-[350px] flex items-center justify-center overflow-hidden">
+      <section className="relative h-[45vh] min-h-[320px] max-h-[500px] flex items-end justify-center overflow-hidden">
         <Image src={IMAGES.scenery2} alt="OC Yacht Shots photography" fill sizes="100vw" className="object-cover" priority />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-black/70" />
-        <div className="relative z-10 text-center text-white px-4">
-          <h1 className="text-4xl md:text-6xl font-extrabold mb-4 drop-shadow-lg">OC Yacht Shots</h1>
-          <p className="text-xl md:text-2xl text-white/90 mb-6">Professional Photos of Your Adventure</p>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20" />
+        <div className="relative z-10 text-center text-white px-4 pb-10 md:pb-14 w-full max-w-4xl mx-auto">
+          <span className="inline-block px-4 py-1.5 bg-yellow-brand text-dark text-xs font-bold uppercase tracking-widest rounded-full mb-4">Add-On</span>
+          <h1 className="text-4xl md:text-6xl font-extrabold mb-3 drop-shadow-lg tracking-tight">OC Yacht Shots</h1>
+          <p className="text-lg md:text-xl text-white/90">Professional Photos of Your Adventure</p>
         </div>
       </section>
 
