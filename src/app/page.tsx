@@ -15,9 +15,7 @@ import {
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { AutoScrollGallery } from "@/components/AutoScrollGallery";
 import { EmailSignup } from "@/components/EmailSignup";
-import { OceanBanner } from "@/components/OceanBanner";
 import { WeatherBar } from "@/components/WeatherBar";
-import { SeasonCountdown } from "@/components/SeasonCountdown";
 
 /* ── All gallery images for the auto-scroll strips ── */
 const GALLERY_ROW_1 = [
@@ -176,16 +174,6 @@ export default function Home() {
           LIVE WEATHER BAR
       ═══════════════════════════════════════════════════════ */}
       <WeatherBar />
-
-      {/* ═══════════════════════════════════════════════════════
-          ANIMATED OCEAN BANNER
-      ═══════════════════════════════════════════════════════ */}
-      <OceanBanner />
-
-      {/* ═══════════════════════════════════════════════════════
-          SEASON COUNTDOWN (auto-hides once season opens)
-      ═══════════════════════════════════════════════════════ */}
-      <SeasonCountdown />
 
       {/* ═══════════════════════════════════════════════════════
           ALTERNATING SERVICE SECTIONS (Jet Ski ↔ Pontoon scroll)
