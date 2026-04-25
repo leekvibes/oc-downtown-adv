@@ -33,7 +33,7 @@ export const BOOKING_URL =
 // ────────────────────────────────────────────────────────────────────
 export const PRICING = {
   // Jet ski — price per hour
-  jetSkiHourly: 129,
+  jetSkiHourly: 179,
 
   // Pontoon boat — by duration
   pontoon2Hour: 329,
