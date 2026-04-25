@@ -11,6 +11,8 @@ import {
   PHONE_HREF,
   ADDRESS,
   ADDRESS_URL,
+  PRICING,
+  HOMEPAGE_HERO,
 } from "@/lib/constants";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { AutoScrollGallery } from "@/components/AutoScrollGallery";
@@ -118,9 +120,9 @@ export default function Home() {
           />
 
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-3 drop-shadow-lg tracking-tight">
-            Explore Assateague Bay on
+            {HOMEPAGE_HERO.headlineLine1}
             <br />
-            <span className="text-yellow-brand">Brand-New Jet Skis &amp; Pontoon Boats</span>
+            <span className="text-yellow-brand">{HOMEPAGE_HERO.headlineLine2}</span>
           </h1>
 
           <a
@@ -137,7 +139,7 @@ export default function Home() {
           </a>
 
           <p className="text-sm md:text-base text-white/80 mb-4 max-w-xl mx-auto">
-            Ocean City&apos;s largest riding area. Brand new equipment. Adventures you won&apos;t find anywhere else.
+            {HOMEPAGE_HERO.subtext}
           </p>
 
           {/* Google Reviews Badge */}
@@ -200,7 +202,7 @@ export default function Home() {
                 </p>
                 <div className="grid grid-cols-2 gap-4 mb-8">
                   {[
-                    { label: "From $129/hr", sub: "Per Jet Ski" },
+                    { label: `From $${PRICING.jetSkiHourly}/hr`, sub: "Per Jet Ski" },
                     { label: "1 Hour", sub: "Guided Tour" },
                     { label: "Up to 3", sub: "Riders Per Ski" },
                     { label: "Ages 5+", sub: "Welcome" },
@@ -280,7 +282,7 @@ export default function Home() {
               </p>
               <div className="grid grid-cols-2 gap-4 mb-8">
                 {[
-                  { label: "From $329", sub: "Starting Rate" },
+                  { label: `From $${PRICING.pontoon2Hour}`, sub: "Starting Rate" },
                   { label: "2-8 Hours", sub: "You Choose" },
                   { label: "Up to 10", sub: "Guests" },
                   { label: "Self-Guided", sub: "You Captain" },

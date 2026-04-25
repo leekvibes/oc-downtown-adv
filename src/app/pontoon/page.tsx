@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Metadata } from "next";
-import { BOOKING_URL, IMAGES, PHONE, PHONE_HREF, REVIEWS, HERO_VIDEO_URL, HERO_FALLBACK_IMAGE } from "@/lib/constants";
+import { BOOKING_URL, IMAGES, PHONE, PHONE_HREF, REVIEWS, HERO_VIDEO_URL, HERO_FALLBACK_IMAGE, PRICING } from "@/lib/constants";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { faqSchema, serviceSchema, breadcrumbSchema } from "@/components/StructuredData";
 
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
 };
 
 const HIGHLIGHTS = [
-  { value: "From $329", sub: "Starting Price", icon: "M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" },
+  { value: `From $${PRICING.pontoon2Hour}`, sub: "Starting Price", icon: "M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" },
   { value: "2–8 Hours", sub: "Flexible Duration", icon: "M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" },
   { value: "Up to 10", sub: "Guests Per Boat", icon: "M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" },
   { value: "Self-Guided", sub: "You're the Captain", icon: "M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" },
@@ -52,13 +52,13 @@ const SIGHTS = [
   { title: "Sunset Cruises", desc: "Book a late departure for a sunset pontoon cruise and watch the sky light up over Assateague Bay.", image: IMAGES.scenery2 },
 ];
 
-const PRICING = [
-  { hours: "2 Hours", price: "$329", popular: false },
+const DURATIONS = [
+  { hours: "2 Hours", price: `$${PRICING.pontoon2Hour}`, popular: false },
   { hours: "3 Hours", price: "$419", popular: false },
-  { hours: "4 Hours", price: "$479", popular: true },
+  { hours: "4 Hours", price: `$${PRICING.pontoon4Hour}`, popular: true },
   { hours: "5 Hours", price: "$529", popular: false },
   { hours: "6 Hours", price: "$659", popular: false },
-  { hours: "8 Hours", price: "$859", popular: false },
+  { hours: "8 Hours", price: `$${PRICING.pontoon8Hour}`, popular: false },
 ];
 
 const FEATURES = [
@@ -154,7 +154,7 @@ export default function PontoonPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="px-8 py-3.5 bg-yellow-brand text-dark font-bold text-base rounded-lg hover:bg-yellow-hover transition-all shadow-xl hover:scale-105">
-              Book Now — From $329
+              {`Book Now — From $${PRICING.pontoon2Hour}`}
             </a>
             <a href={PHONE_HREF} className="px-6 py-3.5 bg-white/15 backdrop-blur-sm text-white font-bold text-base rounded-lg border-2 border-white/30 hover:bg-white/25 transition-all">
               Call {PHONE}
@@ -313,7 +313,7 @@ export default function PontoonPage() {
                 <span className="inline-block px-3 py-1 bg-yellow-brand/20 text-dark text-xs font-bold uppercase rounded-full mb-4">Pontoon Rental</span>
                 <h3 className="text-xl font-extrabold text-dark mb-4">Choose Your Duration</h3>
                 <div className="space-y-2 mb-6">
-                  {PRICING.map((p) => (
+                  {DURATIONS.map((p) => (
                     <div key={p.hours} className={`flex items-center justify-between p-3 rounded-lg border ${p.popular ? "border-blue-brand bg-blue-light" : "border-gray-border"}`}>
                       <div className="flex items-center gap-2">
                         <span className="font-semibold text-dark text-sm">{p.hours}</span>

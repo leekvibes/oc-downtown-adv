@@ -1,27 +1,108 @@
+/* ╔══════════════════════════════════════════════════════════════════╗
+   ║                                                                  ║
+   ║          OC DOWNTOWN ADVENTURES — SITE CONTENT FILE              ║
+   ║                                                                  ║
+   ║   👋 Hi! This file controls most of the editable content on      ║
+   ║      your website. Change a value here, save, and it updates     ║
+   ║      everywhere on the site automatically.                       ║
+   ║                                                                  ║
+   ║   📝 HOW TO EDIT:                                                ║
+   ║      1. Find the section you want to change below.               ║
+   ║      2. Change ONLY the text BETWEEN the quotes "like this".     ║
+   ║      3. Don't delete the quotes, commas, or curly braces { }.    ║
+   ║      4. Save → Commit → Site updates in ~60 seconds.             ║
+   ║                                                                  ║
+   ║   ⚠️  IF YOU SEE A RED ERROR after saving, you probably missed   ║
+   ║      a quote or a comma. Just undo your change and try again.    ║
+   ║                                                                  ║
+   ╚══════════════════════════════════════════════════════════════════╝ */
+
+
+// ────────────────────────────────────────────────────────────────────
+// 🎟️  BOOKING LINK
+// The "Book Now" buttons across the site point to this URL.
+// ────────────────────────────────────────────────────────────────────
 export const BOOKING_URL =
   "https://fareharbor.com/embeds/book/dorchesterstreetjetski/items/?full-items=yes";
 
+
+// ────────────────────────────────────────────────────────────────────
+// 💰 PRICING
+// Just change the numbers — no dollar sign, no quotes around the
+// number. The site adds the "$" automatically.
+// ────────────────────────────────────────────────────────────────────
+export const PRICING = {
+  // Jet ski — price per hour
+  jetSkiHourly: 129,
+
+  // Pontoon boat — by duration
+  pontoon2Hour: 329,
+  pontoon4Hour: 479,
+  pontoon8Hour: 859,
+};
+
+
+// ────────────────────────────────────────────────────────────────────
+// 📞 CONTACT INFO
+// Phone, email, address. Used everywhere on the site.
+// ────────────────────────────────────────────────────────────────────
 export const PHONE = "(443) 664-6180";
-export const PHONE_HREF = "tel:+14436646180";
+export const PHONE_HREF = "tel:+14436646180";        // For phone-call links — keep matching the number above
 export const EMAIL = "dorchesterstreetjetski@gmail.com";
 export const ADDRESS = "307 Dorchester Street, Ocean City, MD 21842";
 export const ADDRESS_URL =
   "https://www.google.com/maps/dir//307+Dorchester+St,+Ocean+City,+MD+21842";
 export const HOURS = "Mon - Sun: 8:30 AM – 8:30 PM";
 
+
+// ────────────────────────────────────────────────────────────────────
+// 📱 SOCIAL MEDIA
+// Links to your Instagram, Facebook, TikTok.
+// ────────────────────────────────────────────────────────────────────
 export const SOCIAL = {
   instagram: "https://instagram.com/ocmd.downtown.adventures",
   facebook: "https://www.facebook.com/profile.php?id=61561058191598",
   tiktok: "https://www.tiktok.com/@oc.downtown.adventures",
 };
 
+
+// ────────────────────────────────────────────────────────────────────
+// 🏷️  LOGO
+// The OC Downtown Adventures logo image URL.
+// ────────────────────────────────────────────────────────────────────
 export const LOGO_URL =
   "https://images.squarespace-cdn.com/content/v1/681e6f3f3528991fee90a1d6/2cb538b7-4b3e-40f7-abff-fc43e627a7b8/2026+OC+Downtown+Adventures+Logo.png";
 
-// Curated images
+
+// ────────────────────────────────────────────────────────────────────
+// 🎬 HOMEPAGE HERO TEXT
+// The big headline at the top of the homepage.
+// ────────────────────────────────────────────────────────────────────
+export const HOMEPAGE_HERO = {
+  // First line of the headline (in white)
+  headlineLine1: "Explore Assateague Bay on",
+
+  // Second line of the headline (in yellow)
+  headlineLine2: "Brand-New Jet Skis & Pontoon Boats",
+
+  // Subtext under the headline
+  subtext:
+    "Ocean City's largest riding area. Brand new equipment. Adventures you won't find anywhere else.",
+};
+
+
+// ────────────────────────────────────────────────────────────────────
+// 🖼️  PHOTOS
+// Every image on the site lives here. To swap a photo, replace the
+// URL with a new one. To upload a new image, use a service like
+// Squarespace's image hosting, Imgur, or Cloudinary, then paste the
+// URL here.
+// ────────────────────────────────────────────────────────────────────
 export const IMAGES = {
   heroJetski:
     "https://images.squarespace-cdn.com/content/v1/681e6f3f3528991fee90a1d6/76fc17ce-ddd7-452d-9c18-b52c7a8f4056/A7400371.jpg",
+
+  // Jet ski photos
   jetski1:
     "https://images.squarespace-cdn.com/content/v1/681e6f3f3528991fee90a1d6/2308d58b-89cc-4390-ae58-55c3cd3365b7/DSW-9.jpg",
   jetski2:
@@ -38,6 +119,8 @@ export const IMAGES = {
     "https://images.squarespace-cdn.com/content/v1/681e6f3f3528991fee90a1d6/82d44d7e-30c9-4e9a-ab80-3343fa087082/DSW-5.jpg",
   jetski8:
     "https://images.squarespace-cdn.com/content/v1/681e6f3f3528991fee90a1d6/739819ff-f66a-41f1-8e14-5076c48cfed1/DSW-13.jpg",
+
+  // Pontoon photos
   pontoon1:
     "https://images.squarespace-cdn.com/content/v1/681e6f3f3528991fee90a1d6/092f05ba-6866-48b1-ac98-45bd5384a674/A7400416.jpg",
   pontoon2:
@@ -50,6 +133,8 @@ export const IMAGES = {
     "https://images.squarespace-cdn.com/content/v1/681e6f3f3528991fee90a1d6/47d3e85b-894b-4fc8-bf72-704a2269d561/A7400228.jpg",
   pontoon6:
     "https://images.squarespace-cdn.com/content/v1/681e6f3f3528991fee90a1d6/4e7c5c29-e4f5-42c4-8dc0-dba2393a803e/A7400397.jpg",
+
+  // Scenery photos (sunsets, bay, wild horses, etc.)
   scenery1:
     "https://images.squarespace-cdn.com/content/v1/681e6f3f3528991fee90a1d6/d9522755-58d4-49b2-b85a-c10f94b4a3c7/9.jpg",
   scenery2:
@@ -60,6 +145,8 @@ export const IMAGES = {
     "https://images.squarespace-cdn.com/content/v1/681e6f3f3528991fee90a1d6/a15c1405-d2eb-4a02-a440-48f17b0b6340/16.jpg",
   scenery5:
     "https://images.squarespace-cdn.com/content/v1/681e6f3f3528991fee90a1d6/8d670593-231c-4199-8796-6456dd92aec7/3.jpg",
+
+  // Group / people photos
   group1:
     "https://images.squarespace-cdn.com/content/v1/681e6f3f3528991fee90a1d6/96e2666d-6138-41f9-bbad-9140b352554e/23.jpg",
   group2:
@@ -68,13 +155,27 @@ export const IMAGES = {
     "https://images.squarespace-cdn.com/content/v1/681e6f3f3528991fee90a1d6/04de1df0-7323-40e6-9829-1f28b2a0241c/6.jpg",
   group4:
     "https://images.squarespace-cdn.com/content/v1/681e6f3f3528991fee90a1d6/812ee14e-246b-4d24-9cea-a18a24c06903/14.jpg",
+
+  // Promo image (used on homepage promo banner & promotions page)
   promo:
     "https://images.squarespace-cdn.com/content/v1/681e6f3f3528991fee90a1d6/a9afc508-8ae3-4629-b10a-3d3a4a36e8ab/OC+Downtown+Adventures.jpg",
 };
 
+
+// ────────────────────────────────────────────────────────────────────
+// 🎥 HERO VIDEO
+// The video that auto-plays on the homepage and About page.
+// ────────────────────────────────────────────────────────────────────
 export const HERO_VIDEO_URL = "/hero-video.mp4";
 export const HERO_FALLBACK_IMAGE = "/hero-fallback.webp";
 
+
+// ────────────────────────────────────────────────────────────────────
+// ⭐ GOOGLE REVIEWS
+// Reviews shown on the homepage. To add a new review, copy one of
+// the existing { } blocks and change the text. Don't forget the
+// comma after each } except the last one.
+// ────────────────────────────────────────────────────────────────────
 export const REVIEWS = [
   {
     name: "Rose-ann V.",
@@ -114,6 +215,11 @@ export const REVIEWS = [
   },
 ];
 
+
+// ────────────────────────────────────────────────────────────────────
+// 🤝 LOCAL BUSINESS PARTNERS
+// Partner businesses shown on the /partners page.
+// ────────────────────────────────────────────────────────────────────
 export const PARTNERS = [
   {
     name: "Bai-Tee Bakery",

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Metadata } from "next";
-import { BOOKING_URL, IMAGES, PHONE, PHONE_HREF, REVIEWS, HERO_VIDEO_URL, HERO_FALLBACK_IMAGE } from "@/lib/constants";
+import { BOOKING_URL, IMAGES, PHONE, PHONE_HREF, REVIEWS, HERO_VIDEO_URL, HERO_FALLBACK_IMAGE, PRICING } from "@/lib/constants";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { faqSchema, serviceSchema, breadcrumbSchema } from "@/components/StructuredData";
 
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
 };
 
 const HIGHLIGHTS = [
-  { value: "$129", sub: "Per Jet Ski / Hour", icon: "M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" },
+  { value: `$${PRICING.jetSkiHourly}`, sub: "Per Jet Ski / Hour", icon: "M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" },
   { value: "1 Hour", sub: "Guided Ride Time", icon: "M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" },
   { value: "Up to 3", sub: "Riders Per Ski", icon: "M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" },
   { value: "Ages 5+", sub: "All Welcome", icon: "M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" },
@@ -120,7 +120,7 @@ export default function JetSkiPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="px-8 py-3.5 bg-yellow-brand text-dark font-bold text-base rounded-lg hover:bg-yellow-hover transition-all shadow-xl hover:scale-105">
-              Book Now — From $129/hr
+              {`Book Now — From $${PRICING.jetSkiHourly}/hr`}
             </a>
             <a href={PHONE_HREF} className="px-6 py-3.5 bg-white/15 backdrop-blur-sm text-white font-bold text-base rounded-lg border-2 border-white/30 hover:bg-white/25 transition-all">
               Call {PHONE}
@@ -212,7 +212,7 @@ export default function JetSkiPage() {
             <ScrollReveal className="lg:col-span-2">
               <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-border text-center sticky top-24">
                 <span className="inline-block px-3 py-1 bg-yellow-brand/20 text-dark text-xs font-bold uppercase rounded-full mb-3">Jet Ski Rental</span>
-                <div className="text-5xl font-extrabold text-blue-brand mb-1">$129</div>
+                <div className="text-5xl font-extrabold text-blue-brand mb-1">{`$${PRICING.jetSkiHourly}`}</div>
                 <p className="text-gray-text text-sm mb-6">per jet ski / hour + tax</p>
                 <div className="space-y-3 text-left text-sm text-gray-text mb-8">
                   {["1-hour guided ride", "Up to 3 riders per ski", "Brand new equipment", "Life vests included", "Ages 5+ welcome", "Certified guide on every ride"].map((line) => (

@@ -6,7 +6,7 @@
    knowledge panels, and local pack ranking.
    ────────────────────────────────────────────────────────── */
 
-import { ADDRESS, PHONE, EMAIL, HOURS, BOOKING_URL, SOCIAL, LOGO_URL } from "@/lib/constants";
+import { ADDRESS, PHONE, EMAIL, HOURS, BOOKING_URL, SOCIAL, LOGO_URL, PRICING } from "@/lib/constants";
 
 /* ── LocalBusiness + TouristAttraction schema ── */
 const localBusinessSchema = {
@@ -22,7 +22,7 @@ const localBusinessSchema = {
   email: EMAIL,
   image: LOGO_URL,
   logo: LOGO_URL,
-  priceRange: "$129 - $859",
+  priceRange: `$${PRICING.jetSkiHourly} - $${PRICING.pontoon8Hour}`,
   currenciesAccepted: "USD",
   paymentAccepted: "Credit Card",
   address: {
@@ -85,7 +85,7 @@ const localBusinessSchema = {
       name: "Jet Ski Rental - 1 Hour Guided Tour",
       description:
         "1-hour guided jet ski tour on Assateague Bay in Ocean City, MD. Brand-new Sea-Doo jet skis, certified guide, see wild horses and dolphins. Up to 3 riders per ski, ages 5+.",
-      price: "129.00",
+      price: `${PRICING.jetSkiHourly}.00`,
       priceCurrency: "USD",
       url: BOOKING_URL,
       availability: "https://schema.org/InStock",
@@ -97,7 +97,7 @@ const localBusinessSchema = {
       name: "Pontoon Boat Rental - 2 Hour Self-Guided Cruise",
       description:
         "Self-guided pontoon boat rental on Assateague Bay, Ocean City MD. Explore wild horse beaches, anchor at sandbars, BYOB friendly. Up to 10 guests.",
-      price: "329.00",
+      price: `${PRICING.pontoon2Hour}.00`,
       priceCurrency: "USD",
       url: BOOKING_URL,
       availability: "https://schema.org/InStock",
@@ -109,7 +109,7 @@ const localBusinessSchema = {
       name: "Pontoon Boat Rental - 4 Hour Self-Guided Cruise",
       description:
         "Most popular pontoon rental. 4 hours exploring Assateague Bay. See wild horses, swim at sandbars, cruise at sunset. Up to 10 guests, BYOB.",
-      price: "479.00",
+      price: `${PRICING.pontoon4Hour}.00`,
       priceCurrency: "USD",
       url: BOOKING_URL,
       availability: "https://schema.org/InStock",
@@ -121,7 +121,7 @@ const localBusinessSchema = {
       name: "Pontoon Boat Rental - 8 Hour Full Day",
       description:
         "Full-day pontoon boat rental on Assateague Bay. 8 hours of exploring, fishing, swimming, and cruising. Up to 10 guests.",
-      price: "859.00",
+      price: `${PRICING.pontoon8Hour}.00`,
       priceCurrency: "USD",
       url: BOOKING_URL,
       availability: "https://schema.org/InStock",
