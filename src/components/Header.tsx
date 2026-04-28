@@ -15,6 +15,7 @@ const MENU_LINKS = [
   { href: "/find-us", label: "Find Us" },
   { href: "/partners", label: "Partners" },
   { href: "/gallery", label: "Gallery" },
+  { href: "/blog", label: "Blog" },
   { href: "/faq", label: "FAQ & Policies" },
   { href: "/promotions", label: "Promotions" },
 ];
@@ -25,9 +26,9 @@ const DESKTOP_LINKS = [
   { href: "/jet-ski", label: "Jet Skis" },
   { href: "/pontoon", label: "Pontoons" },
   { href: "/about", label: "About" },
+  { href: "/blog", label: "Blog" },
   { href: "/contact", label: "Contact" },
   { href: "/find-us", label: "Find Us" },
-  { href: "/partners", label: "Partners" },
 ];
 
 /** Close the mobile menu by unchecking the hidden checkbox. */

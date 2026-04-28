@@ -43,6 +43,7 @@ export function Footer() {
                 { href: "/pontoon", label: "Pontoon Boat Rentals" },
                 { href: "/promotions", label: "Deals & Promotions" },
                 { href: "/gallery", label: "Photo Gallery" },
+                { href: "/blog", label: "Blog & Tips" },
                 { href: "/faq", label: "FAQ & Policies" },
                 { href: "/about", label: "About Us" },
                 { href: "/contact", label: "Contact Us" },
