@@ -49,7 +49,7 @@ const VALUES = [
   },
   {
     title: "Best Location Downtown",
-    desc: "307 Dorchester Street puts you right in the heart of Ocean City with direct access to Assateague Bay — the largest and most beautiful riding area in town.",
+    desc: "307 Dorchester Street puts you right in the heart of Ocean City with direct access to Assateague Bay — open water, wild horses, and miles of coastline to explore.",
     icon: "M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0zM15 11a3 3 0 11-6 0 3 3 0 016 0z",
   },
   {
@@ -129,7 +129,7 @@ export default function AboutPage() {
                   OC Downtown Adventures started with a simple idea: share our love for Ocean City&apos;s waterways with visitors and locals alike. As a family born and raised in Ocean City, Maryland, we grew up on the bay — fishing, crabbing, riding jet skis, and watching sunsets over Assateague Island.
                 </p>
                 <p>
-                  What started as a passion for the water turned into a family business. Today, we operate out of <strong>307 Dorchester Street</strong>, right in the heart of downtown Ocean City, offering jet ski and pontoon boat rentals in the largest and most beautiful riding area in town — Assateague Bay.
+                  What started as a passion for the water turned into a family business. Today, we operate out of <strong>307 Dorchester Street</strong>, right in the heart of downtown Ocean City, offering jet ski and pontoon boat rentals on the open waters of Assateague Bay.
                 </p>
                 <p>
                   We take pride in running a tight ship — brand new equipment inspected daily, certified guides who genuinely care about your experience, and a commitment to safety that never wavers. When you rent with us, you&apos;re not just a customer — you&apos;re family.

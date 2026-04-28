@@ -87,7 +87,7 @@ export const HOMEPAGE_HERO = {
 
   // Subtext under the headline
   subtext:
-    "Ocean City's largest riding area. Brand new equipment. Adventures you won't find anywhere else.",
+    "Open bay water, brand-new equipment, and adventures the whole family will remember.",
 };
 
 

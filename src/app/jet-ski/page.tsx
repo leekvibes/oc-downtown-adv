@@ -43,7 +43,7 @@ const HIGHLIGHTS = [
 const SIGHTS = [
   { title: "Wild Horses", desc: "See the famous Assateague horses grazing on the shore — a once-in-a-lifetime encounter from the water.", image: IMAGES.scenery4 },
   { title: "Dolphins", desc: "Bottlenose dolphins regularly swim alongside riders through the bay and inlet.", image: IMAGES.scenery3 },
-  { title: "Open Water Freedom", desc: "Ocean City's largest riding area — wide open throttle across crystal-clear bay waters.", image: IMAGES.scenery1 },
+  { title: "Open Water Freedom", desc: "Wide-open throttle across crystal-clear bay waters once you clear the no-wake zone.", image: IMAGES.scenery1 },
   { title: "Golden Hour Views", desc: "Book a late ride and experience Assateague Bay painted in stunning sunset colors.", image: IMAGES.scenery2 },
 ];
 
@@ -161,7 +161,7 @@ export default function JetSkiPage() {
               </h2>
               <div className="text-gray-text text-base leading-relaxed space-y-4">
                 <p>
-                  There&apos;s nothing quite like tearing across the crystal-clear waters of Assateague Bay on a brand-new jet ski. From the moment you leave the dock, you&apos;re surrounded by the beauty of Ocean City&apos;s largest and most scenic riding area.
+                  There&apos;s nothing quite like tearing across the crystal-clear waters of Assateague Bay on a brand-new jet ski. From the moment you leave the dock, you&apos;re surrounded by some of the most scenic open water Ocean City has to offer.
                 </p>
                 <p>
                   Your guided adventure takes you past stunning waterfront homes, through open bay waters, and along the coastline of <strong>Assateague Island</strong> — home to the famous wild horses. Keep your eyes open for <strong>dolphins</strong> playing in the wake.

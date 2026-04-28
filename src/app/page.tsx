@@ -198,7 +198,7 @@ export default function Home() {
                   High-Speed Thrills on the Bay
                 </h2>
                 <p className="text-gray-text text-lg leading-relaxed mb-6">
-                  Experience Ocean City&apos;s largest and most beautiful riding area on brand-new jet skis. Our guided tours take you through Assateague Bay where you&apos;ll see wild horses, dolphins, and stunning coastal scenery.
+                  Glide across the open waters of Assateague Bay on brand-new jet skis. Our guided tours bring you face-to-face with wild horses, playful dolphins, and the kind of coastal scenery you&apos;ll want to bottle up and take home.
                 </p>
                 <div className="grid grid-cols-2 gap-4 mb-8">
                   {[

@@ -46,13 +46,9 @@ const localBusinessSchema = {
   },
   sameAs: [SOCIAL.instagram, SOCIAL.facebook, SOCIAL.tiktok],
   hasMap: "https://www.google.com/maps/dir//307+Dorchester+St,+Ocean+City,+MD+21842",
-  aggregateRating: {
-    "@type": "AggregateRating",
-    ratingValue: "5.0",
-    reviewCount: "50",
-    bestRating: "5",
-    worstRating: "1",
-  },
+  /* aggregateRating intentionally omitted until Google Business Profile is
+     populated with verified reviews. Including unverifiable counts in JSON-LD
+     can suppress rich-result eligibility. Re-add once review counts are real. */
   review: [
     {
       "@type": "Review",
