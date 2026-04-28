@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Space_Grotesk } from "next/font/google";
+import { Inter, Fraunces } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
@@ -7,10 +7,23 @@ import { MobileStickyBar } from "@/components/MobileStickyBar";
 import { SeasonCountdown } from "@/components/SeasonCountdown";
 import { StructuredData } from "@/components/StructuredData";
 
-const spaceGrotesk = Space_Grotesk({
+/* ── Type system ──
+   Body: Inter — warm sans, reads professional at small sizes, not fintech-y.
+   Display: Fraunces — modern variable serif with optical sizing (warm at
+            display weights, sober at smaller sizes). Adds editorial polish
+            to headlines without feeling beachy/scripty. */
+const inter = Inter({
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-space",
+  variable: "--font-sans",
+});
+
+const fraunces = Fraunces({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-display",
+  weight: ["400", "600", "700", "800", "900"],
+  style: ["normal", "italic"],
 });
 
 /* ── metadataBase: on Vercel previews, resolve OG images against the Vercel
@@ -93,11 +106,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${spaceGrotesk.variable} h-full`}>
+    <html lang="en" className={`${inter.variable} ${fraunces.variable} h-full`}>
       <head>
         <StructuredData />
       </head>
-      <body className="min-h-full flex flex-col font-[family-name:var(--font-space)] antialiased">
+      <body className="min-h-full flex flex-col font-sans antialiased">
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />

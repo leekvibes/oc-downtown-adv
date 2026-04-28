@@ -10,6 +10,11 @@
   --color-gray-text: #4A5568;
   --color-gray-light: #F7FAFC;
   --color-gray-border: #E2E8F0;
+
+  /* Two-font system. Tailwind generates `font-sans` and `font-display`
+     utilities from these. Inter is body, Fraunces is for headlines. */
+  --font-sans: var(--font-sans), system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-display: var(--font-display), Georgia, "Times New Roman", serif;
 }
 
 html {
@@ -17,9 +22,40 @@ html {
 }
 
 body {
-  font-family: var(--font-space), system-ui, -apple-system, sans-serif;
+  font-family: var(--font-sans);
   color: var(--color-dark);
   background: #ffffff;
+  /* Tabular figures site-wide: prices, hours, phone numbers, stats all snap
+     to a uniform-width grid. This is the single biggest "feels professional"
+     CSS rule for a numerics-heavy site like a rental business. Override on
+     prose contexts (.prose, blog post body) where proportional figures look
+     better in flowing text. */
+  font-variant-numeric: tabular-nums;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Headlines use the display serif. Applies anywhere h1-h3 appear without
+   needing to add a className to every page. Letter-spacing tightens slightly
+   at display sizes (Fraunces gets a touch heavier visually at 36pt+). */
+h1, h2, h3 {
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+}
+
+/* Keep small uppercase pills (the kicker labels above sections) on the
+   sans body font with generous tracking — that's how they read as "labels"
+   not "headings". */
+.kicker,
+[class*="uppercase"][class*="tracking-"] {
+  font-family: var(--font-sans);
+}
+
+/* Prose / long-form content (blog posts) reads better with proportional
+   figures in flowing paragraphs. Tabular nums stay on for sidebars/UI. */
+.prose,
+article p {
+  font-variant-numeric: proportional-nums;
 }
 
 /* Scroll-triggered reveal animations */
